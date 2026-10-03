@@ -6,35 +6,13 @@ What This Is ?
 
 This is a base language model, not a question-answering system or a clinical tool. It was trained with a single objective: predict the next token in biomedical text. It has not undergone instruction tuning, fine-tuning, or any alignment process. It should not be used, as-is, to answer medical questions, and this repository includes direct evidence of why.
 
-Model Architecture
-Property	                        Value
-Base implementation	    :         olm.models.meta.llama3.Llama3Model (Llama-3 style)
-Parameters	            :         252,264,192 (unique, accounting for weight tying)
-Layers	                :         26
-Hidden dimension	      :         768
-Attention heads	        :         12 query heads / 6 key-value heads (Grouped-Query Attention, 2:1 ratio)
-FFN dimension	          :         3,072 (SwiGLU activation)
-Context length	        :         1,024 tokens
-Positional encoding	    :         RoPE (θ = 10,000)
-Normalization	          :         RMSNorm (pre-norm)
-Weight tying	          :         Yes — input embedding shared with output projection
-Tokenizer	              :         stanford-crfm/BioMedLM (GPT-2 BPE, 28,896 vocabulary)
-Dropout	                :         0.0
+<img width="910" height="732" alt="image" src="https://github.com/user-attachments/assets/283d5143-68a9-49be-9571-dcaa3d06f457" />
+
 
 Architecture confirmed directly by loading the checkpoint and inspecting model.named_parameters() — not taken from documentation alone.
 
-Training
-Setting	                          Value
-Hardware	                :       1× NVIDIA H100 NVL
-Total tokens	            :      ~4.65 billion
-Total optimizer steps	    :       8,870
-Wall-clock time	          :       ~12.3 hours
-Dataset	                  :       almanach/Biomed-Enriched (commercial split), PMC-derived biomedical text
-Tokens per optimizer step	:       524,288 (micro-batch 32 × context 1024 × gradient accumulation 16)
-Optimizer	                :       AdamW (β₁=0.9, β₂=0.95, ε=1e-5, weight decay 0.1)
-Learning rate schedule	  :       Linear warmup (177 steps) → cosine decay, 3e-4 → 3e-5
-Gradient clipping	        :       1.0 (global norm)
-Precision	                :       FP32 master weights, BF16 autocast forward/backward
+<img width="915" height="652" alt="image" src="https://github.com/user-attachments/assets/a4acf4e0-d375-484a-b552-1f603398aaf8" />
+
 
 Quality filtering applied during data extraction (confirmed from source notebook):
 
@@ -49,11 +27,8 @@ A known embedding initialization bug was found and fixed during earlier experime
 
 Checkpoint used in this repository: best_model, saved at step 8,500 (the point the training script's own validation loop identified as the best checkpoint by fast-validation loss). This is distinct from the final step-8,870 weights, which were also saved but are not what this repository evaluates.
 
-Scaling Evidence
-Model	                 Tokens	     ValLoss    ValPPL
-100M (dense baseline)	  1.8B	     3.0595	    21.32
-250M (pilot)	          1.8B	     2.8646	    17.54
-250M (this model)	      4.65B	     2.5469	    12.77
+<img width="915" height="235" alt="image" src="https://github.com/user-attachments/assets/c0bd1743-4a21-4450-ba8e-0d455e16bd72" />
+
 
 On equal token budgets (1.8B), the 250M model outperforms the 100M model, consistent with expected parameter-scaling behavior. Extending the 250M model's training to 4.65B tokens produced further improvement, consistent with the project's Chinchilla-style token budget assumption (~20 tokens per parameter).
 
