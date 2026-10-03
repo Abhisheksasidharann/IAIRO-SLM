@@ -1,0 +1,859 @@
+nohup: ignoring input
+================================================================================
+Biomedical SLM | 250M FULL DEVELOPMENT | H100 | version: dev250M_final_full_4p65B_v1
+================================================================================
+GPU: NVIDIA H100 NVL
+PyTorch: 2.8.0+cu126 CUDA: 12.6
+Tokenizer: stanford-crfm/BioMedLM len: 28896 EOS: 28895
+Tokens/update: 524,288
+Total steps: 8870 Warmup: 177
+Max steps: FULL RUN
+Resume: True
+Diagnostic only: False
+Embedding init std: 0.02
+Training corpus target tokens: 4,650,000,000
+Approx optimizer steps: 8870
+Fast validation tokens: 5,000,000
+NOTE: Run full 200M-token validation separately after training.
+Embedding init: blocks.0.embedding.weight ~ N(0, 0.02)
+Embedding post-init std: 0.020000
+Architecture: layers=26, d_model=768, q_heads=12, kv_heads=6, ffn=3072, context=1024
+Parameters: 252,264,192
+Master weight dtype: torch.float32
+[resume] step=1,500, tokens=786,432,000
+Token indices sequence length is longer than the specified maximum sequence length for this model (1888 > 1024). Running this sequence through the model will result in indexing errors
+Token indices sequence length is longer than the specified maximum sequence length for this model (1312 > 1024). Running this sequence through the model will result in indexing errors
+Token indices sequence length is longer than the specified maximum sequence length for this model (1231 > 1024). Running this sequence through the model will result in indexing errors
+Token indices sequence length is longer than the specified maximum sequence length for this model (1323 > 1024). Running this sequence through the model will result in indexing errors
+Token indices sequence length is longer than the specified maximum sequence length for this model (1170 > 1024). Running this sequence through the model will result in indexing errors
+Token indices sequence length is longer than the specified maximum sequence length for this model (1566 > 1024). Running this sequence through the model will result in indexing errors
+Token indices sequence length is longer than the specified maximum sequence length for this model (2448 > 1024). Running this sequence through the model will result in indexing errors
+Token indices sequence length is longer than the specified maximum sequence length for this model (1196 > 1024). Running this sequence through the model will result in indexing errors
+Preflight batch: (32, 1024)
+Token range: 3 28895
+Label range: 3 28895
+Expected uniform-vocabulary CE: 10.2715
+Parameter diagnostics:
+  global param RMS: 0.0230453
+  global param abs max: 1.33401
+  blocks.0.embedding.weight                               shape=(28896, 768)           mean=+1.003e-04 std=2.572e-02 max=1.649e-01
+  blocks.1.stack.0.blocks.0.block.blocks.0.weight         shape=(768,)                 mean=+9.373e-01 std=6.635e-03 max=9.601e-01
+  blocks.1.stack.0.blocks.0.block.blocks.1.q_proj.weight  shape=(768, 768)             mean=+8.613e-05 std=2.017e-02 max=7.508e-02
+  blocks.1.stack.0.blocks.0.block.blocks.1.k_proj.weight  shape=(384, 768)             mean=+3.592e-05 std=2.031e-02 max=8.071e-02
+  blocks.1.stack.0.blocks.0.block.blocks.1.v_proj.weight  shape=(384, 768)             mean=-5.156e-05 std=1.914e-02 max=5.064e-02
+  blocks.1.stack.0.blocks.0.block.blocks.1.out_proj.weight shape=(768, 768)             mean=+9.153e-06 std=1.896e-02 max=5.294e-02
+  blocks.1.stack.0.blocks.1.block.blocks.0.weight         shape=(768,)                 mean=+9.526e-01 std=7.980e-03 max=9.817e-01
+  blocks.1.stack.0.blocks.1.block.blocks.1.up_proj.weight shape=(6144, 768)            mean=+1.308e-07 std=2.057e-02 max=6.696e-02
+  blocks.1.stack.0.blocks.1.block.blocks.1.down_proj.weight shape=(768, 3072)            mean=-8.161e-06 std=1.145e-02 max=4.583e-02
+  blocks.1.stack.1.blocks.0.block.blocks.0.weight         shape=(768,)                 mean=+9.509e-01 std=5.344e-03 max=9.649e-01
+  blocks.1.stack.1.blocks.0.block.blocks.1.q_proj.weight  shape=(768, 768)             mean=+6.282e-06 std=2.073e-02 max=8.815e-02
+  blocks.1.stack.1.blocks.0.block.blocks.1.k_proj.weight  shape=(384, 768)             mean=-9.233e-05 std=2.090e-02 max=8.629e-02
+Logits diagnostics (BF16 autocast):
+  shape: (32, 1024, 28896)
+  dtype: torch.bfloat16
+  mean: -1.465838
+  std: 1.847290
+  min: -10.687500
+  max: +26.250000
+  abs max: 26.250000
+  BF16 CE: 2.509424
+  BF16 PPL: 12.298
+Target/softmax diagnostics:
+  target-logit mean: +12.675604
+  target-logit std: 5.163913
+  mean NLL independently: 2.509424
+  mean softmax entropy: 2.641826
+  max possible entropy: 10.271458
+  teacher-forced top-1 accuracy: 52.7985%
+Preflight loss: 2.5094239711761475
+Preflight grad norm (raw): 1.0034327507019043
+Preflight grad norm (clip return): 1.0034327507019043
+✓ H100 diagnostic preflight passed
+step= 1510/8870 | tokens=0.792B | loss=3.0716 | ppl=21.575 | tok/s=21,553 | lr=2.847e-04 | grad=0.486 | time=0.07h
+step= 1520/8870 | tokens=0.797B | loss=3.1187 | ppl=22.617 | tok/s=88,349 | lr=2.844e-04 | grad=0.516 | time=0.08h
+step= 1530/8870 | tokens=0.802B | loss=3.1228 | ppl=22.709 | tok/s=88,462 | lr=2.842e-04 | grad=0.439 | time=0.10h
+step= 1540/8870 | tokens=0.807B | loss=3.1402 | ppl=23.108 | tok/s=88,545 | lr=2.840e-04 | grad=0.554 | time=0.12h
+step= 1550/8870 | tokens=0.813B | loss=3.0753 | ppl=21.656 | tok/s=88,752 | lr=2.837e-04 | grad=0.482 | time=0.13h
+step= 1560/8870 | tokens=0.818B | loss=3.1748 | ppl=23.922 | tok/s=88,835 | lr=2.835e-04 | grad=0.477 | time=0.15h
+step= 1570/8870 | tokens=0.823B | loss=3.1326 | ppl=22.933 | tok/s=88,845 | lr=2.833e-04 | grad=0.396 | time=0.17h
+step= 1580/8870 | tokens=0.828B | loss=3.1366 | ppl=23.025 | tok/s=88,865 | lr=2.830e-04 | grad=0.566 | time=0.18h
+step= 1590/8870 | tokens=0.834B | loss=3.0597 | ppl=21.321 | tok/s=88,850 | lr=2.828e-04 | grad=0.445 | time=0.20h
+step= 1600/8870 | tokens=0.839B | loss=3.0614 | ppl=21.358 | tok/s=88,580 | lr=2.826e-04 | grad=0.429 | time=0.22h
+step= 1610/8870 | tokens=0.844B | loss=3.0932 | ppl=22.048 | tok/s=88,191 | lr=2.823e-04 | grad=0.536 | time=0.23h
+step= 1620/8870 | tokens=0.849B | loss=3.0856 | ppl=21.881 | tok/s=88,274 | lr=2.821e-04 | grad=0.455 | time=0.25h
+step= 1630/8870 | tokens=0.855B | loss=3.1124 | ppl=22.475 | tok/s=88,602 | lr=2.818e-04 | grad=0.453 | time=0.26h
+step= 1640/8870 | tokens=0.860B | loss=3.0284 | ppl=20.664 | tok/s=88,838 | lr=2.816e-04 | grad=0.507 | time=0.28h
+step= 1650/8870 | tokens=0.865B | loss=3.0931 | ppl=22.046 | tok/s=88,832 | lr=2.813e-04 | grad=0.439 | time=0.30h
+step= 1660/8870 | tokens=0.870B | loss=3.0557 | ppl=21.236 | tok/s=88,496 | lr=2.811e-04 | grad=0.469 | time=0.31h
+step= 1670/8870 | tokens=0.876B | loss=3.1232 | ppl=22.718 | tok/s=88,557 | lr=2.808e-04 | grad=0.526 | time=0.33h
+step= 1680/8870 | tokens=0.881B | loss=3.0572 | ppl=21.268 | tok/s=88,756 | lr=2.806e-04 | grad=0.596 | time=0.35h
+step= 1690/8870 | tokens=0.886B | loss=3.0275 | ppl=20.646 | tok/s=88,703 | lr=2.803e-04 | grad=0.505 | time=0.36h
+step= 1700/8870 | tokens=0.891B | loss=3.0278 | ppl=20.652 | tok/s=88,433 | lr=2.801e-04 | grad=0.469 | time=0.38h
+step= 1710/8870 | tokens=0.897B | loss=3.0219 | ppl=20.531 | tok/s=88,263 | lr=2.798e-04 | grad=0.504 | time=0.40h
+step= 1720/8870 | tokens=0.902B | loss=3.0360 | ppl=20.821 | tok/s=88,173 | lr=2.796e-04 | grad=0.527 | time=0.41h
+step= 1730/8870 | tokens=0.907B | loss=3.0211 | ppl=20.514 | tok/s=88,515 | lr=2.793e-04 | grad=0.457 | time=0.43h
+step= 1740/8870 | tokens=0.912B | loss=3.0429 | ppl=20.966 | tok/s=88,624 | lr=2.791e-04 | grad=0.474 | time=0.45h
+step= 1750/8870 | tokens=0.918B | loss=2.9708 | ppl=19.508 | tok/s=88,645 | lr=2.788e-04 | grad=0.449 | time=0.46h
+step= 1760/8870 | tokens=0.923B | loss=3.0552 | ppl=21.224 | tok/s=88,647 | lr=2.785e-04 | grad=0.526 | time=0.48h
+step= 1770/8870 | tokens=0.928B | loss=3.0943 | ppl=22.073 | tok/s=88,626 | lr=2.783e-04 | grad=0.413 | time=0.50h
+step= 1780/8870 | tokens=0.933B | loss=3.1218 | ppl=22.688 | tok/s=88,570 | lr=2.780e-04 | grad=0.401 | time=0.51h
+step= 1790/8870 | tokens=0.938B | loss=3.0198 | ppl=20.486 | tok/s=88,548 | lr=2.777e-04 | grad=0.618 | time=0.53h
+step= 1800/8870 | tokens=0.944B | loss=3.0223 | ppl=20.538 | tok/s=88,487 | lr=2.775e-04 | grad=0.429 | time=0.54h
+step= 1810/8870 | tokens=0.949B | loss=3.0514 | ppl=21.145 | tok/s=88,456 | lr=2.772e-04 | grad=0.411 | time=0.56h
+step= 1820/8870 | tokens=0.954B | loss=3.0424 | ppl=20.955 | tok/s=88,416 | lr=2.769e-04 | grad=0.351 | time=0.58h
+step= 1830/8870 | tokens=0.959B | loss=3.0101 | ppl=20.289 | tok/s=88,458 | lr=2.766e-04 | grad=0.448 | time=0.59h
+step= 1840/8870 | tokens=0.965B | loss=2.9899 | ppl=19.885 | tok/s=88,253 | lr=2.764e-04 | grad=0.542 | time=0.61h
+step= 1850/8870 | tokens=0.970B | loss=3.0244 | ppl=20.582 | tok/s=88,434 | lr=2.761e-04 | grad=0.446 | time=0.63h
+step= 1860/8870 | tokens=0.975B | loss=2.9764 | ppl=19.618 | tok/s=88,609 | lr=2.758e-04 | grad=0.446 | time=0.64h
+step= 1870/8870 | tokens=0.980B | loss=2.9794 | ppl=19.676 | tok/s=88,758 | lr=2.755e-04 | grad=0.464 | time=0.66h
+step= 1880/8870 | tokens=0.986B | loss=2.9722 | ppl=19.535 | tok/s=88,786 | lr=2.753e-04 | grad=0.437 | time=0.68h
+step= 1890/8870 | tokens=0.991B | loss=2.9861 | ppl=19.808 | tok/s=88,508 | lr=2.750e-04 | grad=0.537 | time=0.69h
+step= 1900/8870 | tokens=0.996B | loss=3.0008 | ppl=20.101 | tok/s=88,366 | lr=2.747e-04 | grad=0.406 | time=0.71h
+step= 1910/8870 | tokens=1.001B | loss=2.9979 | ppl=20.043 | tok/s=88,665 | lr=2.744e-04 | grad=0.472 | time=0.73h
+step= 1920/8870 | tokens=1.007B | loss=2.9715 | ppl=19.521 | tok/s=88,591 | lr=2.741e-04 | grad=0.446 | time=0.74h
+step= 1930/8870 | tokens=1.012B | loss=2.9581 | ppl=19.260 | tok/s=88,354 | lr=2.738e-04 | grad=0.447 | time=0.76h
+step= 1940/8870 | tokens=1.017B | loss=2.9986 | ppl=20.057 | tok/s=88,843 | lr=2.735e-04 | grad=0.478 | time=0.77h
+step= 1950/8870 | tokens=1.022B | loss=2.9776 | ppl=19.640 | tok/s=88,308 | lr=2.733e-04 | grad=0.470 | time=0.79h
+step= 1960/8870 | tokens=1.028B | loss=3.0442 | ppl=20.993 | tok/s=88,902 | lr=2.730e-04 | grad=0.499 | time=0.81h
+step= 1970/8870 | tokens=1.033B | loss=3.0415 | ppl=20.937 | tok/s=88,884 | lr=2.727e-04 | grad=0.425 | time=0.82h
+step= 1980/8870 | tokens=1.038B | loss=3.0057 | ppl=20.201 | tok/s=88,484 | lr=2.724e-04 | grad=0.475 | time=0.84h
+step= 1990/8870 | tokens=1.043B | loss=3.0325 | ppl=20.750 | tok/s=88,299 | lr=2.721e-04 | grad=0.386 | time=0.86h
+step= 2000/8870 | tokens=1.049B | loss=2.9600 | ppl=19.298 | tok/s=88,232 | lr=2.718e-04 | grad=0.405 | time=0.87h
+Token indices sequence length is longer than the specified maximum sequence length for this model (1099 > 1024). Running this sequence through the model will result in indexing errors
+[validation] step=2000 loss=3.0143 ppl=20.375
+[validation] new best model + tokenizer saved
+[checkpoint] step 2,000
+step= 2010/8870 | tokens=1.054B | loss=2.9407 | ppl=18.929 | tok/s=62,008 | lr=2.715e-04 | grad=0.405 | time=0.90h
+step= 2020/8870 | tokens=1.059B | loss=2.9480 | ppl=19.068 | tok/s=88,310 | lr=2.712e-04 | grad=0.493 | time=0.91h
+step= 2030/8870 | tokens=1.064B | loss=2.9107 | ppl=18.370 | tok/s=88,755 | lr=2.709e-04 | grad=0.475 | time=0.93h
+step= 2040/8870 | tokens=1.070B | loss=2.8859 | ppl=17.919 | tok/s=88,896 | lr=2.706e-04 | grad=0.467 | time=0.95h
+step= 2050/8870 | tokens=1.075B | loss=2.9243 | ppl=18.621 | tok/s=88,760 | lr=2.703e-04 | grad=0.519 | time=0.96h
+step= 2060/8870 | tokens=1.080B | loss=3.0061 | ppl=20.208 | tok/s=88,728 | lr=2.700e-04 | grad=0.473 | time=0.98h
+step= 2070/8870 | tokens=1.085B | loss=2.9545 | ppl=19.192 | tok/s=88,706 | lr=2.697e-04 | grad=1.261 | time=1.00h
+step= 2080/8870 | tokens=1.091B | loss=2.9837 | ppl=19.761 | tok/s=88,581 | lr=2.693e-04 | grad=0.515 | time=1.01h
+step= 2090/8870 | tokens=1.096B | loss=2.9147 | ppl=18.443 | tok/s=88,161 | lr=2.690e-04 | grad=0.379 | time=1.03h
+step= 2100/8870 | tokens=1.101B | loss=2.9638 | ppl=19.371 | tok/s=87,715 | lr=2.687e-04 | grad=0.450 | time=1.04h
+step= 2110/8870 | tokens=1.106B | loss=2.9271 | ppl=18.673 | tok/s=88,487 | lr=2.684e-04 | grad=0.473 | time=1.06h
+step= 2120/8870 | tokens=1.111B | loss=2.9380 | ppl=18.879 | tok/s=88,616 | lr=2.681e-04 | grad=0.412 | time=1.08h
+step= 2130/8870 | tokens=1.117B | loss=2.9521 | ppl=19.146 | tok/s=88,855 | lr=2.678e-04 | grad=0.441 | time=1.09h
+step= 2140/8870 | tokens=1.122B | loss=2.9669 | ppl=19.432 | tok/s=88,489 | lr=2.675e-04 | grad=0.406 | time=1.11h
+step= 2150/8870 | tokens=1.127B | loss=2.9198 | ppl=18.538 | tok/s=88,751 | lr=2.671e-04 | grad=0.492 | time=1.13h
+step= 2160/8870 | tokens=1.132B | loss=2.9412 | ppl=18.938 | tok/s=88,356 | lr=2.668e-04 | grad=0.457 | time=1.14h
+step= 2170/8870 | tokens=1.138B | loss=2.9194 | ppl=18.530 | tok/s=88,378 | lr=2.665e-04 | grad=0.496 | time=1.16h
+step= 2180/8870 | tokens=1.143B | loss=2.9360 | ppl=18.841 | tok/s=88,811 | lr=2.662e-04 | grad=0.476 | time=1.18h
+step= 2190/8870 | tokens=1.148B | loss=2.9438 | ppl=18.987 | tok/s=88,496 | lr=2.659e-04 | grad=0.433 | time=1.19h
+step= 2200/8870 | tokens=1.153B | loss=2.9155 | ppl=18.458 | tok/s=88,479 | lr=2.655e-04 | grad=0.386 | time=1.21h
+step= 2210/8870 | tokens=1.159B | loss=2.8512 | ppl=17.309 | tok/s=88,704 | lr=2.652e-04 | grad=0.389 | time=1.23h
+step= 2220/8870 | tokens=1.164B | loss=2.8943 | ppl=18.070 | tok/s=88,231 | lr=2.649e-04 | grad=0.565 | time=1.24h
+step= 2230/8870 | tokens=1.169B | loss=2.8473 | ppl=17.242 | tok/s=88,702 | lr=2.645e-04 | grad=0.426 | time=1.26h
+step= 2240/8870 | tokens=1.174B | loss=2.9428 | ppl=18.969 | tok/s=88,960 | lr=2.642e-04 | grad=0.403 | time=1.28h
+step= 2250/8870 | tokens=1.180B | loss=2.9497 | ppl=19.101 | tok/s=88,829 | lr=2.639e-04 | grad=0.390 | time=1.29h
+step= 2260/8870 | tokens=1.185B | loss=2.9218 | ppl=18.575 | tok/s=88,480 | lr=2.636e-04 | grad=0.387 | time=1.31h
+step= 2270/8870 | tokens=1.190B | loss=2.8973 | ppl=18.125 | tok/s=88,303 | lr=2.632e-04 | grad=0.468 | time=1.32h
+step= 2280/8870 | tokens=1.195B | loss=2.9084 | ppl=18.328 | tok/s=88,203 | lr=2.629e-04 | grad=0.407 | time=1.34h
+step= 2290/8870 | tokens=1.201B | loss=2.9078 | ppl=18.317 | tok/s=88,147 | lr=2.625e-04 | grad=0.400 | time=1.36h
+step= 2300/8870 | tokens=1.206B | loss=2.9675 | ppl=19.444 | tok/s=88,150 | lr=2.622e-04 | grad=0.423 | time=1.37h
+step= 2310/8870 | tokens=1.211B | loss=2.9186 | ppl=18.515 | tok/s=88,504 | lr=2.619e-04 | grad=0.423 | time=1.39h
+step= 2320/8870 | tokens=1.216B | loss=2.9649 | ppl=19.393 | tok/s=88,576 | lr=2.615e-04 | grad=0.523 | time=1.41h
+step= 2330/8870 | tokens=1.222B | loss=2.9477 | ppl=19.062 | tok/s=88,167 | lr=2.612e-04 | grad=0.401 | time=1.42h
+step= 2340/8870 | tokens=1.227B | loss=2.9375 | ppl=18.868 | tok/s=88,533 | lr=2.608e-04 | grad=0.482 | time=1.44h
+step= 2350/8870 | tokens=1.232B | loss=2.8864 | ppl=17.928 | tok/s=88,899 | lr=2.605e-04 | grad=0.378 | time=1.46h
+step= 2360/8870 | tokens=1.237B | loss=2.9398 | ppl=18.912 | tok/s=88,363 | lr=2.602e-04 | grad=0.413 | time=1.47h
+step= 2370/8870 | tokens=1.243B | loss=2.8923 | ppl=18.034 | tok/s=88,927 | lr=2.598e-04 | grad=0.408 | time=1.49h
+step= 2380/8870 | tokens=1.248B | loss=2.9242 | ppl=18.619 | tok/s=88,857 | lr=2.595e-04 | grad=0.388 | time=1.51h
+step= 2390/8870 | tokens=1.253B | loss=2.8633 | ppl=17.519 | tok/s=88,856 | lr=2.591e-04 | grad=0.371 | time=1.52h
+step= 2400/8870 | tokens=1.258B | loss=2.8894 | ppl=17.983 | tok/s=88,291 | lr=2.588e-04 | grad=0.417 | time=1.54h
+step= 2410/8870 | tokens=1.264B | loss=2.8223 | ppl=16.816 | tok/s=88,540 | lr=2.584e-04 | grad=0.433 | time=1.55h
+step= 2420/8870 | tokens=1.269B | loss=2.9308 | ppl=18.743 | tok/s=88,596 | lr=2.581e-04 | grad=0.359 | time=1.57h
+step= 2430/8870 | tokens=1.274B | loss=2.8974 | ppl=18.128 | tok/s=88,495 | lr=2.577e-04 | grad=0.443 | time=1.59h
+step= 2440/8870 | tokens=1.279B | loss=2.8286 | ppl=16.922 | tok/s=88,233 | lr=2.573e-04 | grad=0.460 | time=1.60h
+step= 2450/8870 | tokens=1.285B | loss=2.8683 | ppl=17.608 | tok/s=86,902 | lr=2.570e-04 | grad=0.415 | time=1.62h
+step= 2460/8870 | tokens=1.290B | loss=2.8838 | ppl=17.883 | tok/s=88,782 | lr=2.566e-04 | grad=0.463 | time=1.64h
+step= 2470/8870 | tokens=1.295B | loss=2.9435 | ppl=18.982 | tok/s=88,261 | lr=2.563e-04 | grad=0.380 | time=1.65h
+step= 2480/8870 | tokens=1.300B | loss=2.8343 | ppl=17.018 | tok/s=88,807 | lr=2.559e-04 | grad=0.399 | time=1.67h
+step= 2490/8870 | tokens=1.305B | loss=2.8989 | ppl=18.153 | tok/s=88,375 | lr=2.556e-04 | grad=0.385 | time=1.69h
+step= 2500/8870 | tokens=1.311B | loss=2.8409 | ppl=17.131 | tok/s=88,793 | lr=2.552e-04 | grad=0.439 | time=1.70h
+[validation] step=2500 loss=2.9136 ppl=18.423
+[validation] new best model + tokenizer saved
+[checkpoint] step 2,500
+step= 2510/8870 | tokens=1.316B | loss=2.8178 | ppl=16.739 | tok/s=61,648 | lr=2.548e-04 | grad=0.382 | time=1.73h
+step= 2520/8870 | tokens=1.321B | loss=2.8364 | ppl=17.055 | tok/s=88,395 | lr=2.545e-04 | grad=0.418 | time=1.74h
+step= 2530/8870 | tokens=1.326B | loss=2.8826 | ppl=17.860 | tok/s=86,273 | lr=2.541e-04 | grad=0.388 | time=1.76h
+step= 2540/8870 | tokens=1.332B | loss=2.8230 | ppl=16.827 | tok/s=88,423 | lr=2.537e-04 | grad=0.428 | time=1.78h
+step= 2550/8870 | tokens=1.337B | loss=2.8879 | ppl=17.955 | tok/s=88,941 | lr=2.534e-04 | grad=0.418 | time=1.79h
+step= 2560/8870 | tokens=1.342B | loss=2.9178 | ppl=18.500 | tok/s=88,373 | lr=2.530e-04 | grad=0.481 | time=1.81h
+step= 2570/8870 | tokens=1.347B | loss=2.9354 | ppl=18.828 | tok/s=88,279 | lr=2.526e-04 | grad=0.406 | time=1.83h
+step= 2580/8870 | tokens=1.353B | loss=2.9132 | ppl=18.415 | tok/s=88,393 | lr=2.523e-04 | grad=0.416 | time=1.84h
+step= 2590/8870 | tokens=1.358B | loss=2.8342 | ppl=17.017 | tok/s=88,379 | lr=2.519e-04 | grad=0.454 | time=1.86h
+step= 2600/8870 | tokens=1.363B | loss=2.8619 | ppl=17.495 | tok/s=88,482 | lr=2.515e-04 | grad=0.500 | time=1.88h
+step= 2610/8870 | tokens=1.368B | loss=2.8050 | ppl=16.526 | tok/s=88,701 | lr=2.511e-04 | grad=0.406 | time=1.89h
+step= 2620/8870 | tokens=1.374B | loss=2.8607 | ppl=17.473 | tok/s=88,724 | lr=2.508e-04 | grad=0.409 | time=1.91h
+step= 2630/8870 | tokens=1.379B | loss=2.9172 | ppl=18.489 | tok/s=88,876 | lr=2.504e-04 | grad=0.389 | time=1.92h
+step= 2640/8870 | tokens=1.384B | loss=2.9056 | ppl=18.275 | tok/s=88,422 | lr=2.500e-04 | grad=0.347 | time=1.94h
+step= 2650/8870 | tokens=1.389B | loss=2.8213 | ppl=16.799 | tok/s=86,606 | lr=2.496e-04 | grad=0.444 | time=1.96h
+step= 2660/8870 | tokens=1.395B | loss=2.8787 | ppl=17.792 | tok/s=88,491 | lr=2.492e-04 | grad=0.457 | time=1.97h
+step= 2670/8870 | tokens=1.400B | loss=2.8027 | ppl=16.488 | tok/s=88,331 | lr=2.489e-04 | grad=0.414 | time=1.99h
+step= 2680/8870 | tokens=1.405B | loss=2.7945 | ppl=16.355 | tok/s=88,194 | lr=2.485e-04 | grad=0.380 | time=2.01h
+step= 2690/8870 | tokens=1.410B | loss=2.8059 | ppl=16.542 | tok/s=88,133 | lr=2.481e-04 | grad=0.394 | time=2.02h
+step= 2700/8870 | tokens=1.416B | loss=2.8047 | ppl=16.522 | tok/s=88,333 | lr=2.477e-04 | grad=0.396 | time=2.04h
+step= 2710/8870 | tokens=1.421B | loss=2.8294 | ppl=16.936 | tok/s=88,716 | lr=2.473e-04 | grad=0.417 | time=2.06h
+step= 2720/8870 | tokens=1.426B | loss=2.8534 | ppl=17.346 | tok/s=88,841 | lr=2.469e-04 | grad=0.403 | time=2.07h
+step= 2730/8870 | tokens=1.431B | loss=2.8551 | ppl=17.376 | tok/s=88,851 | lr=2.465e-04 | grad=0.397 | time=2.09h
+step= 2740/8870 | tokens=1.437B | loss=2.7971 | ppl=16.397 | tok/s=88,842 | lr=2.462e-04 | grad=0.403 | time=2.11h
+step= 2750/8870 | tokens=1.442B | loss=2.8679 | ppl=17.599 | tok/s=88,791 | lr=2.458e-04 | grad=0.474 | time=2.12h
+step= 2760/8870 | tokens=1.447B | loss=2.8370 | ppl=17.065 | tok/s=88,769 | lr=2.454e-04 | grad=0.366 | time=2.14h
+step= 2770/8870 | tokens=1.452B | loss=2.8152 | ppl=16.697 | tok/s=88,760 | lr=2.450e-04 | grad=0.369 | time=2.16h
+step= 2780/8870 | tokens=1.458B | loss=2.8499 | ppl=17.285 | tok/s=88,725 | lr=2.446e-04 | grad=0.392 | time=2.17h
+step= 2790/8870 | tokens=1.463B | loss=2.8288 | ppl=16.925 | tok/s=88,701 | lr=2.442e-04 | grad=0.377 | time=2.19h
+step= 2800/8870 | tokens=1.468B | loss=2.7269 | ppl=15.285 | tok/s=88,672 | lr=2.438e-04 | grad=0.405 | time=2.20h
+step= 2810/8870 | tokens=1.473B | loss=2.7664 | ppl=15.902 | tok/s=88,288 | lr=2.434e-04 | grad=0.392 | time=2.22h
+step= 2820/8870 | tokens=1.478B | loss=2.8494 | ppl=17.278 | tok/s=88,490 | lr=2.430e-04 | grad=0.392 | time=2.24h
+step= 2830/8870 | tokens=1.484B | loss=2.8190 | ppl=16.760 | tok/s=88,664 | lr=2.426e-04 | grad=0.368 | time=2.25h
+step= 2840/8870 | tokens=1.489B | loss=2.7980 | ppl=16.412 | tok/s=88,171 | lr=2.422e-04 | grad=0.362 | time=2.27h
+step= 2850/8870 | tokens=1.494B | loss=2.8049 | ppl=16.526 | tok/s=88,184 | lr=2.418e-04 | grad=0.425 | time=2.29h
+step= 2860/8870 | tokens=1.499B | loss=2.8479 | ppl=17.252 | tok/s=88,585 | lr=2.414e-04 | grad=0.386 | time=2.30h
+step= 2870/8870 | tokens=1.505B | loss=2.8368 | ppl=17.062 | tok/s=88,854 | lr=2.410e-04 | grad=0.377 | time=2.32h
+step= 2880/8870 | tokens=1.510B | loss=2.8513 | ppl=17.310 | tok/s=88,531 | lr=2.406e-04 | grad=0.433 | time=2.34h
+step= 2890/8870 | tokens=1.515B | loss=2.8446 | ppl=17.195 | tok/s=88,503 | lr=2.402e-04 | grad=0.405 | time=2.35h
+step= 2900/8870 | tokens=1.520B | loss=2.7692 | ppl=15.945 | tok/s=88,424 | lr=2.398e-04 | grad=0.351 | time=2.37h
+step= 2910/8870 | tokens=1.526B | loss=2.8016 | ppl=16.471 | tok/s=88,170 | lr=2.394e-04 | grad=0.411 | time=2.39h
+step= 2920/8870 | tokens=1.531B | loss=2.8366 | ppl=17.058 | tok/s=88,408 | lr=2.390e-04 | grad=0.423 | time=2.40h
+step= 2930/8870 | tokens=1.536B | loss=2.8162 | ppl=16.713 | tok/s=88,487 | lr=2.386e-04 | grad=1.145 | time=2.42h
+step= 2940/8870 | tokens=1.541B | loss=2.7819 | ppl=16.150 | tok/s=88,464 | lr=2.381e-04 | grad=0.375 | time=2.43h
+step= 2950/8870 | tokens=1.547B | loss=2.7956 | ppl=16.372 | tok/s=88,454 | lr=2.377e-04 | grad=0.420 | time=2.45h
+step= 2960/8870 | tokens=1.552B | loss=2.7974 | ppl=16.401 | tok/s=88,417 | lr=2.373e-04 | grad=0.364 | time=2.47h
+step= 2970/8870 | tokens=1.557B | loss=2.7981 | ppl=16.413 | tok/s=88,409 | lr=2.369e-04 | grad=0.421 | time=2.48h
+step= 2980/8870 | tokens=1.562B | loss=2.8080 | ppl=16.576 | tok/s=88,401 | lr=2.365e-04 | grad=0.425 | time=2.50h
+step= 2990/8870 | tokens=1.568B | loss=2.8715 | ppl=17.663 | tok/s=88,405 | lr=2.361e-04 | grad=0.474 | time=2.52h
+step= 3000/8870 | tokens=1.573B | loss=2.8084 | ppl=16.584 | tok/s=88,388 | lr=2.357e-04 | grad=0.367 | time=2.53h
+[validation] step=3000 loss=2.8460 ppl=17.219
+[validation] new best model + tokenizer saved
+[checkpoint] step 3,000
+step= 3010/8870 | tokens=1.578B | loss=2.7690 | ppl=15.943 | tok/s=62,012 | lr=2.353e-04 | grad=0.363 | time=2.56h
+step= 3020/8870 | tokens=1.583B | loss=2.7553 | ppl=15.726 | tok/s=88,558 | lr=2.348e-04 | grad=0.460 | time=2.57h
+step= 3030/8870 | tokens=1.589B | loss=2.8473 | ppl=17.241 | tok/s=88,547 | lr=2.344e-04 | grad=0.426 | time=2.59h
+step= 3040/8870 | tokens=1.594B | loss=2.7489 | ppl=15.625 | tok/s=88,538 | lr=2.340e-04 | grad=0.386 | time=2.61h
+step= 3050/8870 | tokens=1.599B | loss=2.7748 | ppl=16.035 | tok/s=88,281 | lr=2.336e-04 | grad=0.376 | time=2.62h
+step= 3060/8870 | tokens=1.604B | loss=2.7735 | ppl=16.015 | tok/s=88,470 | lr=2.332e-04 | grad=0.426 | time=2.64h
+step= 3070/8870 | tokens=1.610B | loss=2.7880 | ppl=16.249 | tok/s=88,951 | lr=2.327e-04 | grad=0.369 | time=2.66h
+step= 3080/8870 | tokens=1.615B | loss=2.8619 | ppl=17.495 | tok/s=88,863 | lr=2.323e-04 | grad=0.396 | time=2.67h
+step= 3090/8870 | tokens=1.620B | loss=2.8747 | ppl=17.720 | tok/s=88,858 | lr=2.319e-04 | grad=0.419 | time=2.69h
+step= 3100/8870 | tokens=1.625B | loss=2.8384 | ppl=17.088 | tok/s=88,650 | lr=2.315e-04 | grad=0.383 | time=2.71h
+step= 3110/8870 | tokens=1.631B | loss=2.8372 | ppl=17.068 | tok/s=88,914 | lr=2.310e-04 | grad=0.380 | time=2.72h
+step= 3120/8870 | tokens=1.636B | loss=2.8162 | ppl=16.713 | tok/s=88,494 | lr=2.306e-04 | grad=0.369 | time=2.74h
+step= 3130/8870 | tokens=1.641B | loss=2.8235 | ppl=16.836 | tok/s=88,147 | lr=2.302e-04 | grad=0.405 | time=2.75h
+step= 3140/8870 | tokens=1.646B | loss=2.8027 | ppl=16.489 | tok/s=88,235 | lr=2.298e-04 | grad=0.450 | time=2.77h
+step= 3150/8870 | tokens=1.652B | loss=2.7748 | ppl=16.036 | tok/s=88,273 | lr=2.293e-04 | grad=0.386 | time=2.79h
+step= 3160/8870 | tokens=1.657B | loss=2.7837 | ppl=16.179 | tok/s=86,322 | lr=2.289e-04 | grad=0.357 | time=2.80h
+step= 3170/8870 | tokens=1.662B | loss=2.8032 | ppl=16.498 | tok/s=88,104 | lr=2.285e-04 | grad=0.417 | time=2.82h
+step= 3180/8870 | tokens=1.667B | loss=2.7590 | ppl=15.783 | tok/s=88,804 | lr=2.280e-04 | grad=0.388 | time=2.84h
+step= 3190/8870 | tokens=1.672B | loss=2.8258 | ppl=16.875 | tok/s=88,225 | lr=2.276e-04 | grad=0.459 | time=2.85h
+step= 3200/8870 | tokens=1.678B | loss=2.7969 | ppl=16.393 | tok/s=88,817 | lr=2.272e-04 | grad=0.433 | time=2.87h
+step= 3210/8870 | tokens=1.683B | loss=2.7571 | ppl=15.753 | tok/s=88,953 | lr=2.267e-04 | grad=0.340 | time=2.89h
+step= 3220/8870 | tokens=1.688B | loss=2.7445 | ppl=15.557 | tok/s=88,608 | lr=2.263e-04 | grad=0.419 | time=2.90h
+step= 3230/8870 | tokens=1.693B | loss=2.7060 | ppl=14.969 | tok/s=88,408 | lr=2.259e-04 | grad=0.432 | time=2.92h
+step= 3240/8870 | tokens=1.699B | loss=2.7524 | ppl=15.679 | tok/s=88,308 | lr=2.254e-04 | grad=0.380 | time=2.94h
+step= 3250/8870 | tokens=1.704B | loss=2.7429 | ppl=15.531 | tok/s=88,227 | lr=2.250e-04 | grad=0.441 | time=2.95h
+step= 3260/8870 | tokens=1.709B | loss=2.6689 | ppl=14.424 | tok/s=88,202 | lr=2.246e-04 | grad=0.385 | time=2.97h
+step= 3270/8870 | tokens=1.714B | loss=2.7724 | ppl=15.997 | tok/s=88,158 | lr=2.241e-04 | grad=0.404 | time=2.99h
+step= 3280/8870 | tokens=1.720B | loss=2.7388 | ppl=15.468 | tok/s=88,127 | lr=2.237e-04 | grad=0.402 | time=3.00h
+step= 3290/8870 | tokens=1.725B | loss=2.7073 | ppl=14.988 | tok/s=88,256 | lr=2.233e-04 | grad=0.390 | time=3.02h
+step= 3300/8870 | tokens=1.730B | loss=2.7608 | ppl=15.812 | tok/s=88,818 | lr=2.228e-04 | grad=0.364 | time=3.03h
+step= 3310/8870 | tokens=1.735B | loss=2.7365 | ppl=15.433 | tok/s=87,937 | lr=2.224e-04 | grad=0.398 | time=3.05h
+step= 3320/8870 | tokens=1.741B | loss=2.8172 | ppl=16.730 | tok/s=88,191 | lr=2.219e-04 | grad=0.367 | time=3.07h
+step= 3330/8870 | tokens=1.746B | loss=2.7921 | ppl=16.316 | tok/s=88,476 | lr=2.215e-04 | grad=0.347 | time=3.08h
+step= 3340/8870 | tokens=1.751B | loss=2.8247 | ppl=16.857 | tok/s=88,529 | lr=2.210e-04 | grad=0.376 | time=3.10h
+step= 3350/8870 | tokens=1.756B | loss=2.7933 | ppl=16.335 | tok/s=88,215 | lr=2.206e-04 | grad=0.363 | time=3.12h
+step= 3360/8870 | tokens=1.762B | loss=2.7975 | ppl=16.404 | tok/s=88,712 | lr=2.202e-04 | grad=0.414 | time=3.13h
+step= 3370/8870 | tokens=1.767B | loss=2.7968 | ppl=16.393 | tok/s=88,767 | lr=2.197e-04 | grad=0.379 | time=3.15h
+step= 3380/8870 | tokens=1.772B | loss=2.6850 | ppl=14.659 | tok/s=88,432 | lr=2.193e-04 | grad=0.336 | time=3.17h
+step= 3390/8870 | tokens=1.777B | loss=2.7217 | ppl=15.206 | tok/s=88,815 | lr=2.188e-04 | grad=0.350 | time=3.18h
+step= 3400/8870 | tokens=1.783B | loss=2.7456 | ppl=15.573 | tok/s=88,227 | lr=2.184e-04 | grad=0.385 | time=3.20h
+step= 3410/8870 | tokens=1.788B | loss=2.6943 | ppl=14.795 | tok/s=88,072 | lr=2.179e-04 | grad=0.442 | time=3.22h
+step= 3420/8870 | tokens=1.793B | loss=2.6749 | ppl=14.511 | tok/s=88,379 | lr=2.175e-04 | grad=0.399 | time=3.23h
+step= 3430/8870 | tokens=1.798B | loss=2.6518 | ppl=14.180 | tok/s=88,387 | lr=2.170e-04 | grad=0.378 | time=3.25h
+step= 3440/8870 | tokens=1.804B | loss=2.7174 | ppl=15.141 | tok/s=88,351 | lr=2.166e-04 | grad=0.349 | time=3.27h
+step= 3450/8870 | tokens=1.809B | loss=2.7980 | ppl=16.413 | tok/s=88,325 | lr=2.161e-04 | grad=0.370 | time=3.28h
+step= 3460/8870 | tokens=1.814B | loss=2.7720 | ppl=15.991 | tok/s=88,304 | lr=2.157e-04 | grad=0.478 | time=3.30h
+step= 3470/8870 | tokens=1.819B | loss=2.7923 | ppl=16.319 | tok/s=88,303 | lr=2.152e-04 | grad=0.389 | time=3.32h
+step= 3480/8870 | tokens=1.825B | loss=2.7782 | ppl=16.090 | tok/s=88,292 | lr=2.148e-04 | grad=0.354 | time=3.33h
+step= 3490/8870 | tokens=1.830B | loss=2.8042 | ppl=16.513 | tok/s=88,294 | lr=2.143e-04 | grad=0.396 | time=3.35h
+step= 3500/8870 | tokens=1.835B | loss=2.7765 | ppl=16.063 | tok/s=88,276 | lr=2.138e-04 | grad=0.396 | time=3.36h
+[validation] step=3500 loss=2.7868 ppl=16.229
+[validation] new best model + tokenizer saved
+[checkpoint] step 3,500
+step= 3510/8870 | tokens=1.840B | loss=2.7136 | ppl=15.083 | tok/s=62,178 | lr=2.134e-04 | grad=0.389 | time=3.39h
+step= 3520/8870 | tokens=1.845B | loss=2.7396 | ppl=15.481 | tok/s=88,429 | lr=2.129e-04 | grad=0.424 | time=3.40h
+step= 3530/8870 | tokens=1.851B | loss=2.6964 | ppl=14.827 | tok/s=88,407 | lr=2.125e-04 | grad=0.352 | time=3.42h
+step= 3540/8870 | tokens=1.856B | loss=2.7713 | ppl=15.980 | tok/s=88,632 | lr=2.120e-04 | grad=0.377 | time=3.44h
+step= 3550/8870 | tokens=1.861B | loss=2.6819 | ppl=14.613 | tok/s=88,775 | lr=2.116e-04 | grad=0.347 | time=3.45h
+step= 3560/8870 | tokens=1.866B | loss=2.7727 | ppl=16.002 | tok/s=88,647 | lr=2.111e-04 | grad=0.363 | time=3.47h
+step= 3570/8870 | tokens=1.872B | loss=2.7347 | ppl=15.405 | tok/s=88,770 | lr=2.107e-04 | grad=0.419 | time=3.49h
+step= 3580/8870 | tokens=1.877B | loss=2.7355 | ppl=15.417 | tok/s=88,769 | lr=2.102e-04 | grad=0.381 | time=3.50h
+step= 3590/8870 | tokens=1.882B | loss=2.7779 | ppl=16.086 | tok/s=88,604 | lr=2.097e-04 | grad=0.377 | time=3.52h
+step= 3600/8870 | tokens=1.887B | loss=2.7551 | ppl=15.722 | tok/s=88,881 | lr=2.093e-04 | grad=0.375 | time=3.54h
+step= 3610/8870 | tokens=1.893B | loss=2.7880 | ppl=16.248 | tok/s=88,431 | lr=2.088e-04 | grad=0.477 | time=3.55h
+step= 3620/8870 | tokens=1.898B | loss=2.7367 | ppl=15.435 | tok/s=88,526 | lr=2.083e-04 | grad=0.359 | time=3.57h
+step= 3630/8870 | tokens=1.903B | loss=2.7386 | ppl=15.465 | tok/s=88,739 | lr=2.079e-04 | grad=0.344 | time=3.59h
+step= 3640/8870 | tokens=1.908B | loss=2.7399 | ppl=15.486 | tok/s=88,374 | lr=2.074e-04 | grad=0.368 | time=3.60h
+step= 3650/8870 | tokens=1.914B | loss=2.6244 | ppl=13.797 | tok/s=88,623 | lr=2.070e-04 | grad=0.360 | time=3.62h
+step= 3660/8870 | tokens=1.919B | loss=2.7436 | ppl=15.542 | tok/s=88,655 | lr=2.065e-04 | grad=0.400 | time=3.63h
+step= 3670/8870 | tokens=1.924B | loss=2.7542 | ppl=15.708 | tok/s=88,276 | lr=2.060e-04 | grad=0.391 | time=3.65h
+step= 3680/8870 | tokens=1.929B | loss=2.7445 | ppl=15.556 | tok/s=88,831 | lr=2.056e-04 | grad=0.400 | time=3.67h
+step= 3690/8870 | tokens=1.935B | loss=2.7159 | ppl=15.118 | tok/s=88,433 | lr=2.051e-04 | grad=0.366 | time=3.68h
+step= 3700/8870 | tokens=1.940B | loss=2.7341 | ppl=15.396 | tok/s=88,461 | lr=2.046e-04 | grad=0.388 | time=3.70h
+step= 3710/8870 | tokens=1.945B | loss=2.7689 | ppl=15.941 | tok/s=88,712 | lr=2.042e-04 | grad=0.386 | time=3.72h
+step= 3720/8870 | tokens=1.950B | loss=2.7328 | ppl=15.376 | tok/s=88,759 | lr=2.037e-04 | grad=0.364 | time=3.73h
+step= 3730/8870 | tokens=1.956B | loss=2.7254 | ppl=15.262 | tok/s=88,768 | lr=2.032e-04 | grad=0.348 | time=3.75h
+step= 3740/8870 | tokens=1.961B | loss=2.6826 | ppl=14.623 | tok/s=88,750 | lr=2.028e-04 | grad=0.408 | time=3.77h
+step= 3750/8870 | tokens=1.966B | loss=2.7084 | ppl=15.005 | tok/s=88,728 | lr=2.023e-04 | grad=0.426 | time=3.78h
+step= 3760/8870 | tokens=1.971B | loss=2.7131 | ppl=15.076 | tok/s=88,655 | lr=2.018e-04 | grad=0.433 | time=3.80h
+step= 3770/8870 | tokens=1.977B | loss=2.7829 | ppl=16.166 | tok/s=88,533 | lr=2.014e-04 | grad=0.414 | time=3.82h
+step= 3780/8870 | tokens=1.982B | loss=2.6809 | ppl=14.598 | tok/s=88,204 | lr=2.009e-04 | grad=0.344 | time=3.83h
+step= 3790/8870 | tokens=1.987B | loss=2.7016 | ppl=14.903 | tok/s=88,651 | lr=2.004e-04 | grad=0.391 | time=3.85h
+step= 3800/8870 | tokens=1.992B | loss=2.7523 | ppl=15.679 | tok/s=88,514 | lr=1.999e-04 | grad=0.422 | time=3.86h
+step= 3810/8870 | tokens=1.998B | loss=2.7252 | ppl=15.260 | tok/s=88,663 | lr=1.995e-04 | grad=0.357 | time=3.88h
+step= 3820/8870 | tokens=2.003B | loss=2.7217 | ppl=15.206 | tok/s=88,385 | lr=1.990e-04 | grad=0.385 | time=3.90h
+step= 3830/8870 | tokens=2.008B | loss=2.7346 | ppl=15.404 | tok/s=88,248 | lr=1.985e-04 | grad=0.378 | time=3.91h
+step= 3840/8870 | tokens=2.013B | loss=2.7235 | ppl=15.234 | tok/s=88,475 | lr=1.981e-04 | grad=0.404 | time=3.93h
+step= 3850/8870 | tokens=2.019B | loss=2.6356 | ppl=13.952 | tok/s=88,735 | lr=1.976e-04 | grad=0.397 | time=3.95h
+step= 3860/8870 | tokens=2.024B | loss=2.6597 | ppl=14.292 | tok/s=88,974 | lr=1.971e-04 | grad=0.331 | time=3.96h
+step= 3870/8870 | tokens=2.029B | loss=2.7279 | ppl=15.301 | tok/s=88,404 | lr=1.966e-04 | grad=0.367 | time=3.98h
+step= 3880/8870 | tokens=2.034B | loss=2.7512 | ppl=15.662 | tok/s=88,505 | lr=1.962e-04 | grad=0.356 | time=4.00h
+step= 3890/8870 | tokens=2.039B | loss=2.7246 | ppl=15.250 | tok/s=88,753 | lr=1.957e-04 | grad=0.405 | time=4.01h
+step= 3900/8870 | tokens=2.045B | loss=2.7015 | ppl=14.902 | tok/s=88,781 | lr=1.952e-04 | grad=0.372 | time=4.03h
+step= 3910/8870 | tokens=2.050B | loss=2.7382 | ppl=15.460 | tok/s=88,797 | lr=1.947e-04 | grad=0.339 | time=4.05h
+step= 3920/8870 | tokens=2.055B | loss=2.7500 | ppl=15.643 | tok/s=88,771 | lr=1.943e-04 | grad=0.344 | time=4.06h
+step= 3930/8870 | tokens=2.060B | loss=2.7143 | ppl=15.095 | tok/s=88,761 | lr=1.938e-04 | grad=0.336 | time=4.08h
+step= 3940/8870 | tokens=2.066B | loss=2.7422 | ppl=15.521 | tok/s=88,727 | lr=1.933e-04 | grad=0.660 | time=4.09h
+step= 3950/8870 | tokens=2.071B | loss=2.7615 | ppl=15.824 | tok/s=88,717 | lr=1.928e-04 | grad=0.363 | time=4.11h
+step= 3960/8870 | tokens=2.076B | loss=2.6986 | ppl=14.860 | tok/s=88,707 | lr=1.924e-04 | grad=0.363 | time=4.13h
+step= 3970/8870 | tokens=2.081B | loss=2.6810 | ppl=14.599 | tok/s=88,710 | lr=1.919e-04 | grad=0.345 | time=4.14h
+step= 3980/8870 | tokens=2.087B | loss=2.7313 | ppl=15.353 | tok/s=88,685 | lr=1.914e-04 | grad=0.369 | time=4.16h
+step= 3990/8870 | tokens=2.092B | loss=2.6810 | ppl=14.599 | tok/s=88,685 | lr=1.909e-04 | grad=0.360 | time=4.18h
+step= 4000/8870 | tokens=2.097B | loss=2.6815 | ppl=14.608 | tok/s=88,674 | lr=1.904e-04 | grad=0.415 | time=4.19h
+[validation] step=4000 loss=2.7299 ppl=15.331
+[validation] new best model + tokenizer saved
+[checkpoint] step 4,000
+step= 4010/8870 | tokens=2.102B | loss=2.7004 | ppl=14.885 | tok/s=62,147 | lr=1.900e-04 | grad=0.390 | time=4.22h
+step= 4020/8870 | tokens=2.108B | loss=2.6614 | ppl=14.316 | tok/s=88,220 | lr=1.895e-04 | grad=0.325 | time=4.23h
+step= 4030/8870 | tokens=2.113B | loss=2.6864 | ppl=14.679 | tok/s=88,237 | lr=1.890e-04 | grad=0.358 | time=4.25h
+step= 4040/8870 | tokens=2.118B | loss=2.7210 | ppl=15.196 | tok/s=88,538 | lr=1.885e-04 | grad=0.347 | time=4.27h
+step= 4050/8870 | tokens=2.123B | loss=2.7378 | ppl=15.452 | tok/s=88,695 | lr=1.880e-04 | grad=0.420 | time=4.28h
+step= 4060/8870 | tokens=2.129B | loss=2.6449 | ppl=14.082 | tok/s=88,925 | lr=1.876e-04 | grad=0.358 | time=4.30h
+step= 4070/8870 | tokens=2.134B | loss=2.7255 | ppl=15.264 | tok/s=88,421 | lr=1.871e-04 | grad=0.374 | time=4.32h
+step= 4080/8870 | tokens=2.139B | loss=2.6888 | ppl=14.714 | tok/s=88,288 | lr=1.866e-04 | grad=0.373 | time=4.33h
+step= 4090/8870 | tokens=2.144B | loss=2.6534 | ppl=14.203 | tok/s=88,479 | lr=1.861e-04 | grad=0.387 | time=4.35h
+step= 4100/8870 | tokens=2.150B | loss=2.6908 | ppl=14.743 | tok/s=88,653 | lr=1.856e-04 | grad=0.339 | time=4.36h
+step= 4110/8870 | tokens=2.155B | loss=2.6574 | ppl=14.259 | tok/s=88,397 | lr=1.851e-04 | grad=0.343 | time=4.38h
+step= 4120/8870 | tokens=2.160B | loss=2.6675 | ppl=14.403 | tok/s=88,167 | lr=1.847e-04 | grad=0.352 | time=4.40h
+step= 4130/8870 | tokens=2.165B | loss=2.7601 | ppl=15.802 | tok/s=88,301 | lr=1.842e-04 | grad=0.462 | time=4.41h
+step= 4140/8870 | tokens=2.171B | loss=2.7357 | ppl=15.420 | tok/s=88,892 | lr=1.837e-04 | grad=0.363 | time=4.43h
+step= 4150/8870 | tokens=2.176B | loss=2.6814 | ppl=14.605 | tok/s=88,814 | lr=1.832e-04 | grad=0.413 | time=4.45h
+step= 4160/8870 | tokens=2.181B | loss=2.7196 | ppl=15.174 | tok/s=87,494 | lr=1.827e-04 | grad=0.383 | time=4.46h
+step= 4170/8870 | tokens=2.186B | loss=2.6568 | ppl=14.251 | tok/s=88,676 | lr=1.822e-04 | grad=0.391 | time=4.48h
+step= 4180/8870 | tokens=2.192B | loss=2.6699 | ppl=14.438 | tok/s=88,629 | lr=1.818e-04 | grad=0.370 | time=4.50h
+step= 4190/8870 | tokens=2.197B | loss=2.6891 | ppl=14.718 | tok/s=88,574 | lr=1.813e-04 | grad=0.328 | time=4.51h
+step= 4200/8870 | tokens=2.202B | loss=2.6893 | ppl=14.721 | tok/s=88,568 | lr=1.808e-04 | grad=0.403 | time=4.53h
+step= 4210/8870 | tokens=2.207B | loss=2.6477 | ppl=14.122 | tok/s=88,578 | lr=1.803e-04 | grad=0.374 | time=4.55h
+step= 4220/8870 | tokens=2.212B | loss=2.6219 | ppl=13.761 | tok/s=88,537 | lr=1.798e-04 | grad=0.407 | time=4.56h
+step= 4230/8870 | tokens=2.218B | loss=2.6126 | ppl=13.634 | tok/s=88,519 | lr=1.793e-04 | grad=0.354 | time=4.58h
+step= 4240/8870 | tokens=2.223B | loss=2.5716 | ppl=13.087 | tok/s=88,507 | lr=1.789e-04 | grad=0.346 | time=4.60h
+step= 4250/8870 | tokens=2.228B | loss=2.6905 | ppl=14.739 | tok/s=88,476 | lr=1.784e-04 | grad=0.333 | time=4.61h
+step= 4260/8870 | tokens=2.233B | loss=2.6794 | ppl=14.576 | tok/s=88,183 | lr=1.779e-04 | grad=0.355 | time=4.63h
+step= 4270/8870 | tokens=2.239B | loss=2.7029 | ppl=14.923 | tok/s=88,228 | lr=1.774e-04 | grad=0.365 | time=4.64h
+step= 4280/8870 | tokens=2.244B | loss=2.7228 | ppl=15.223 | tok/s=88,757 | lr=1.769e-04 | grad=0.348 | time=4.66h
+step= 4290/8870 | tokens=2.249B | loss=2.7029 | ppl=14.922 | tok/s=88,251 | lr=1.764e-04 | grad=0.337 | time=4.68h
+step= 4300/8870 | tokens=2.254B | loss=2.6354 | ppl=13.949 | tok/s=88,875 | lr=1.759e-04 | grad=0.389 | time=4.69h
+step= 4310/8870 | tokens=2.260B | loss=2.6909 | ppl=14.746 | tok/s=88,660 | lr=1.755e-04 | grad=0.331 | time=4.71h
+step= 4320/8870 | tokens=2.265B | loss=2.6638 | ppl=14.351 | tok/s=88,849 | lr=1.750e-04 | grad=0.375 | time=4.73h
+step= 4330/8870 | tokens=2.270B | loss=2.6777 | ppl=14.552 | tok/s=88,409 | lr=1.745e-04 | grad=0.385 | time=4.74h
+step= 4340/8870 | tokens=2.275B | loss=2.6854 | ppl=14.665 | tok/s=88,748 | lr=1.740e-04 | grad=0.376 | time=4.76h
+step= 4350/8870 | tokens=2.281B | loss=2.6790 | ppl=14.570 | tok/s=88,256 | lr=1.735e-04 | grad=0.388 | time=4.78h
+step= 4360/8870 | tokens=2.286B | loss=2.5629 | ppl=12.973 | tok/s=88,874 | lr=1.730e-04 | grad=0.396 | time=4.79h
+step= 4370/8870 | tokens=2.291B | loss=2.7072 | ppl=14.988 | tok/s=88,322 | lr=1.725e-04 | grad=0.355 | time=4.81h
+step= 4380/8870 | tokens=2.296B | loss=2.6877 | ppl=14.698 | tok/s=88,868 | lr=1.720e-04 | grad=0.326 | time=4.83h
+step= 4390/8870 | tokens=2.302B | loss=2.6889 | ppl=14.715 | tok/s=88,745 | lr=1.716e-04 | grad=0.328 | time=4.84h
+step= 4400/8870 | tokens=2.307B | loss=2.7103 | ppl=15.033 | tok/s=88,460 | lr=1.711e-04 | grad=0.366 | time=4.86h
+step= 4410/8870 | tokens=2.312B | loss=2.6754 | ppl=14.518 | tok/s=88,355 | lr=1.706e-04 | grad=0.361 | time=4.87h
+step= 4420/8870 | tokens=2.317B | loss=2.6813 | ppl=14.604 | tok/s=88,292 | lr=1.701e-04 | grad=0.336 | time=4.89h
+step= 4430/8870 | tokens=2.323B | loss=2.7149 | ppl=15.103 | tok/s=88,264 | lr=1.696e-04 | grad=0.338 | time=4.91h
+step= 4440/8870 | tokens=2.328B | loss=2.6670 | ppl=14.397 | tok/s=88,059 | lr=1.691e-04 | grad=0.380 | time=4.92h
+step= 4450/8870 | tokens=2.333B | loss=2.6171 | ppl=13.695 | tok/s=88,258 | lr=1.686e-04 | grad=0.383 | time=4.94h
+step= 4460/8870 | tokens=2.338B | loss=2.6568 | ppl=14.250 | tok/s=88,235 | lr=1.681e-04 | grad=0.332 | time=4.96h
+step= 4470/8870 | tokens=2.344B | loss=2.6481 | ppl=14.128 | tok/s=88,255 | lr=1.677e-04 | grad=0.368 | time=4.97h
+step= 4480/8870 | tokens=2.349B | loss=2.6649 | ppl=14.366 | tok/s=88,268 | lr=1.672e-04 | grad=0.374 | time=4.99h
+step= 4490/8870 | tokens=2.354B | loss=2.6628 | ppl=14.336 | tok/s=88,264 | lr=1.667e-04 | grad=0.424 | time=5.01h
+step= 4500/8870 | tokens=2.359B | loss=2.6712 | ppl=14.457 | tok/s=88,187 | lr=1.662e-04 | grad=0.412 | time=5.02h
+[validation] step=4500 loss=2.6911 ppl=14.749
+[validation] new best model + tokenizer saved
+[checkpoint] step 4,500
+step= 4510/8870 | tokens=2.365B | loss=2.6574 | ppl=14.259 | tok/s=62,219 | lr=1.657e-04 | grad=0.346 | time=5.05h
+step= 4520/8870 | tokens=2.370B | loss=2.6741 | ppl=14.499 | tok/s=88,611 | lr=1.652e-04 | grad=0.357 | time=5.06h
+step= 4530/8870 | tokens=2.375B | loss=2.7219 | ppl=15.210 | tok/s=88,475 | lr=1.647e-04 | grad=0.355 | time=5.08h
+step= 4540/8870 | tokens=2.380B | loss=2.7397 | ppl=15.482 | tok/s=88,770 | lr=1.642e-04 | grad=0.405 | time=5.10h
+step= 4550/8870 | tokens=2.386B | loss=2.7272 | ppl=15.289 | tok/s=88,218 | lr=1.638e-04 | grad=0.382 | time=5.11h
+step= 4560/8870 | tokens=2.391B | loss=2.6603 | ppl=14.301 | tok/s=88,716 | lr=1.633e-04 | grad=0.428 | time=5.13h
+step= 4570/8870 | tokens=2.396B | loss=2.6751 | ppl=14.513 | tok/s=88,346 | lr=1.628e-04 | grad=0.404 | time=5.15h
+step= 4580/8870 | tokens=2.401B | loss=2.6622 | ppl=14.327 | tok/s=88,911 | lr=1.623e-04 | grad=0.369 | time=5.16h
+step= 4590/8870 | tokens=2.406B | loss=2.6170 | ppl=13.695 | tok/s=88,391 | lr=1.618e-04 | grad=0.333 | time=5.18h
+step= 4600/8870 | tokens=2.412B | loss=2.6674 | ppl=14.403 | tok/s=88,490 | lr=1.613e-04 | grad=0.355 | time=5.19h
+step= 4610/8870 | tokens=2.417B | loss=2.6546 | ppl=14.219 | tok/s=88,674 | lr=1.608e-04 | grad=0.369 | time=5.21h
+step= 4620/8870 | tokens=2.422B | loss=2.5815 | ppl=13.217 | tok/s=88,828 | lr=1.603e-04 | grad=0.344 | time=5.23h
+step= 4630/8870 | tokens=2.427B | loss=2.6413 | ppl=14.031 | tok/s=88,532 | lr=1.599e-04 | grad=0.330 | time=5.24h
+step= 4640/8870 | tokens=2.433B | loss=2.6559 | ppl=14.237 | tok/s=88,389 | lr=1.594e-04 | grad=0.354 | time=5.26h
+step= 4650/8870 | tokens=2.438B | loss=2.6103 | ppl=13.603 | tok/s=88,308 | lr=1.589e-04 | grad=0.359 | time=5.28h
+step= 4660/8870 | tokens=2.443B | loss=2.6405 | ppl=14.020 | tok/s=88,241 | lr=1.584e-04 | grad=0.358 | time=5.29h
+step= 4670/8870 | tokens=2.448B | loss=2.6393 | ppl=14.003 | tok/s=88,190 | lr=1.579e-04 | grad=0.362 | time=5.31h
+step= 4680/8870 | tokens=2.454B | loss=2.6581 | ppl=14.268 | tok/s=88,149 | lr=1.574e-04 | grad=0.337 | time=5.33h
+step= 4690/8870 | tokens=2.459B | loss=2.6264 | ppl=13.823 | tok/s=88,114 | lr=1.569e-04 | grad=0.325 | time=5.34h
+step= 4700/8870 | tokens=2.464B | loss=2.6664 | ppl=14.388 | tok/s=88,098 | lr=1.564e-04 | grad=0.334 | time=5.36h
+step= 4710/8870 | tokens=2.469B | loss=2.6743 | ppl=14.503 | tok/s=88,433 | lr=1.560e-04 | grad=0.375 | time=5.38h
+step= 4720/8870 | tokens=2.475B | loss=2.6181 | ppl=13.709 | tok/s=88,621 | lr=1.555e-04 | grad=0.340 | time=5.39h
+step= 4730/8870 | tokens=2.480B | loss=2.6624 | ppl=14.331 | tok/s=88,682 | lr=1.550e-04 | grad=0.365 | time=5.41h
+step= 4740/8870 | tokens=2.485B | loss=2.6623 | ppl=14.329 | tok/s=88,540 | lr=1.545e-04 | grad=0.359 | time=5.43h
+step= 4750/8870 | tokens=2.490B | loss=2.6341 | ppl=13.930 | tok/s=88,158 | lr=1.540e-04 | grad=0.341 | time=5.44h
+step= 4760/8870 | tokens=2.496B | loss=2.7069 | ppl=14.982 | tok/s=88,780 | lr=1.535e-04 | grad=0.341 | time=5.46h
+step= 4770/8870 | tokens=2.501B | loss=2.6611 | ppl=14.313 | tok/s=88,580 | lr=1.530e-04 | grad=0.332 | time=5.47h
+step= 4780/8870 | tokens=2.506B | loss=2.6377 | ppl=13.981 | tok/s=88,126 | lr=1.526e-04 | grad=0.344 | time=5.49h
+step= 4790/8870 | tokens=2.511B | loss=2.6993 | ppl=14.870 | tok/s=88,311 | lr=1.521e-04 | grad=0.318 | time=5.51h
+step= 4800/8870 | tokens=2.517B | loss=2.7071 | ppl=14.986 | tok/s=88,744 | lr=1.516e-04 | grad=0.378 | time=5.52h
+step= 4810/8870 | tokens=2.522B | loss=2.6962 | ppl=14.823 | tok/s=88,466 | lr=1.511e-04 | grad=0.362 | time=5.54h
+step= 4820/8870 | tokens=2.527B | loss=2.6852 | ppl=14.661 | tok/s=88,717 | lr=1.506e-04 | grad=0.342 | time=5.56h
+step= 4830/8870 | tokens=2.532B | loss=2.5955 | ppl=13.403 | tok/s=88,366 | lr=1.501e-04 | grad=0.347 | time=5.57h
+step= 4840/8870 | tokens=2.538B | loss=2.6306 | ppl=13.882 | tok/s=88,689 | lr=1.496e-04 | grad=0.325 | time=5.59h
+step= 4850/8870 | tokens=2.543B | loss=2.6500 | ppl=14.154 | tok/s=88,643 | lr=1.492e-04 | grad=0.315 | time=5.61h
+step= 4860/8870 | tokens=2.548B | loss=2.6437 | ppl=14.065 | tok/s=88,217 | lr=1.487e-04 | grad=0.372 | time=5.62h
+step= 4870/8870 | tokens=2.553B | loss=2.6464 | ppl=14.103 | tok/s=88,876 | lr=1.482e-04 | grad=0.339 | time=5.64h
+step= 4880/8870 | tokens=2.559B | loss=2.5420 | ppl=12.705 | tok/s=88,286 | lr=1.477e-04 | grad=0.368 | time=5.66h
+step= 4890/8870 | tokens=2.564B | loss=2.5597 | ppl=12.932 | tok/s=88,647 | lr=1.472e-04 | grad=0.333 | time=5.67h
+step= 4900/8870 | tokens=2.569B | loss=2.5763 | ppl=13.149 | tok/s=88,652 | lr=1.467e-04 | grad=0.309 | time=5.69h
+step= 4910/8870 | tokens=2.574B | loss=2.6345 | ppl=13.937 | tok/s=88,227 | lr=1.463e-04 | grad=0.333 | time=5.71h
+step= 4920/8870 | tokens=2.579B | loss=2.6576 | ppl=14.263 | tok/s=88,854 | lr=1.458e-04 | grad=0.341 | time=5.72h
+step= 4930/8870 | tokens=2.585B | loss=2.6276 | ppl=13.841 | tok/s=88,761 | lr=1.453e-04 | grad=0.338 | time=5.74h
+step= 4940/8870 | tokens=2.590B | loss=2.6920 | ppl=14.762 | tok/s=88,582 | lr=1.448e-04 | grad=0.343 | time=5.75h
+step= 4950/8870 | tokens=2.595B | loss=2.6895 | ppl=14.724 | tok/s=88,546 | lr=1.443e-04 | grad=0.319 | time=5.77h
+step= 4960/8870 | tokens=2.600B | loss=2.6502 | ppl=14.157 | tok/s=88,510 | lr=1.438e-04 | grad=0.352 | time=5.79h
+step= 4970/8870 | tokens=2.606B | loss=2.6206 | ppl=13.743 | tok/s=88,504 | lr=1.434e-04 | grad=0.370 | time=5.80h
+step= 4980/8870 | tokens=2.611B | loss=2.6662 | ppl=14.385 | tok/s=88,494 | lr=1.429e-04 | grad=0.341 | time=5.82h
+step= 4990/8870 | tokens=2.616B | loss=2.5600 | ppl=12.935 | tok/s=88,199 | lr=1.424e-04 | grad=0.339 | time=5.84h
+step= 5000/8870 | tokens=2.621B | loss=2.6106 | ppl=13.607 | tok/s=88,481 | lr=1.419e-04 | grad=0.324 | time=5.85h
+[validation] step=5000 loss=2.6594 ppl=14.288
+[validation] new best model + tokenizer saved
+[checkpoint] step 5,000
+step= 5010/8870 | tokens=2.627B | loss=2.6462 | ppl=14.101 | tok/s=62,106 | lr=1.414e-04 | grad=0.349 | time=5.88h
+step= 5020/8870 | tokens=2.632B | loss=2.6607 | ppl=14.306 | tok/s=88,754 | lr=1.410e-04 | grad=0.323 | time=5.89h
+step= 5030/8870 | tokens=2.637B | loss=2.5470 | ppl=12.769 | tok/s=88,684 | lr=1.405e-04 | grad=0.381 | time=5.91h
+step= 5040/8870 | tokens=2.642B | loss=2.6008 | ppl=13.475 | tok/s=88,283 | lr=1.400e-04 | grad=0.392 | time=5.93h
+step= 5050/8870 | tokens=2.648B | loss=2.6189 | ppl=13.721 | tok/s=88,397 | lr=1.395e-04 | grad=0.379 | time=5.94h
+step= 5060/8870 | tokens=2.653B | loss=2.6126 | ppl=13.635 | tok/s=88,890 | lr=1.390e-04 | grad=0.334 | time=5.96h
+step= 5070/8870 | tokens=2.658B | loss=2.6309 | ppl=13.886 | tok/s=88,280 | lr=1.386e-04 | grad=0.348 | time=5.98h
+step= 5080/8870 | tokens=2.663B | loss=2.6157 | ppl=13.677 | tok/s=88,713 | lr=1.381e-04 | grad=0.344 | time=5.99h
+step= 5090/8870 | tokens=2.669B | loss=2.6059 | ppl=13.544 | tok/s=88,941 | lr=1.376e-04 | grad=0.317 | time=6.01h
+step= 5100/8870 | tokens=2.674B | loss=2.6185 | ppl=13.715 | tok/s=89,001 | lr=1.371e-04 | grad=0.337 | time=6.02h
+step= 5110/8870 | tokens=2.679B | loss=2.5890 | ppl=13.317 | tok/s=88,786 | lr=1.366e-04 | grad=0.309 | time=6.04h
+step= 5120/8870 | tokens=2.684B | loss=2.6196 | ppl=13.731 | tok/s=88,358 | lr=1.362e-04 | grad=0.360 | time=6.06h
+step= 5130/8870 | tokens=2.690B | loss=2.6526 | ppl=14.191 | tok/s=88,132 | lr=1.357e-04 | grad=0.337 | time=6.07h
+step= 5140/8870 | tokens=2.695B | loss=2.5284 | ppl=12.534 | tok/s=88,372 | lr=1.352e-04 | grad=0.367 | time=6.09h
+step= 5150/8870 | tokens=2.700B | loss=2.6407 | ppl=14.024 | tok/s=88,559 | lr=1.347e-04 | grad=0.323 | time=6.11h
+step= 5160/8870 | tokens=2.705B | loss=2.5734 | ppl=13.110 | tok/s=88,082 | lr=1.343e-04 | grad=0.335 | time=6.12h
+step= 5170/8870 | tokens=2.711B | loss=2.6124 | ppl=13.631 | tok/s=88,630 | lr=1.338e-04 | grad=0.372 | time=6.14h
+step= 5180/8870 | tokens=2.716B | loss=2.6535 | ppl=14.204 | tok/s=88,599 | lr=1.333e-04 | grad=0.369 | time=6.16h
+step= 5190/8870 | tokens=2.721B | loss=2.6556 | ppl=14.234 | tok/s=88,575 | lr=1.328e-04 | grad=0.364 | time=6.17h
+step= 5200/8870 | tokens=2.726B | loss=2.5523 | ppl=12.836 | tok/s=88,557 | lr=1.324e-04 | grad=0.308 | time=6.19h
+step= 5210/8870 | tokens=2.732B | loss=2.5878 | ppl=13.301 | tok/s=88,512 | lr=1.319e-04 | grad=0.337 | time=6.21h
+step= 5220/8870 | tokens=2.737B | loss=2.6501 | ppl=14.155 | tok/s=88,452 | lr=1.314e-04 | grad=0.329 | time=6.22h
+step= 5230/8870 | tokens=2.742B | loss=2.6083 | ppl=13.576 | tok/s=88,175 | lr=1.310e-04 | grad=0.344 | time=6.24h
+step= 5240/8870 | tokens=2.747B | loss=2.6375 | ppl=13.978 | tok/s=88,838 | lr=1.305e-04 | grad=0.358 | time=6.25h
+step= 5250/8870 | tokens=2.753B | loss=2.6202 | ppl=13.738 | tok/s=88,245 | lr=1.300e-04 | grad=0.336 | time=6.27h
+step= 5260/8870 | tokens=2.758B | loss=2.6829 | ppl=14.628 | tok/s=88,814 | lr=1.295e-04 | grad=0.345 | time=6.29h
+step= 5270/8870 | tokens=2.763B | loss=2.6502 | ppl=14.156 | tok/s=88,863 | lr=1.291e-04 | grad=0.358 | time=6.30h
+step= 5280/8870 | tokens=2.768B | loss=2.6597 | ppl=14.292 | tok/s=88,840 | lr=1.286e-04 | grad=0.348 | time=6.32h
+step= 5290/8870 | tokens=2.773B | loss=2.6387 | ppl=13.995 | tok/s=88,909 | lr=1.281e-04 | grad=0.326 | time=6.34h
+step= 5300/8870 | tokens=2.779B | loss=2.6533 | ppl=14.200 | tok/s=88,637 | lr=1.277e-04 | grad=0.316 | time=6.35h
+step= 5310/8870 | tokens=2.784B | loss=2.6649 | ppl=14.366 | tok/s=88,588 | lr=1.272e-04 | grad=0.325 | time=6.37h
+step= 5320/8870 | tokens=2.789B | loss=2.5664 | ppl=13.018 | tok/s=88,299 | lr=1.267e-04 | grad=0.359 | time=6.39h
+step= 5330/8870 | tokens=2.794B | loss=2.5492 | ppl=12.796 | tok/s=88,319 | lr=1.263e-04 | grad=0.318 | time=6.40h
+step= 5340/8870 | tokens=2.800B | loss=2.4194 | ppl=11.239 | tok/s=88,793 | lr=1.258e-04 | grad=0.354 | time=6.42h
+step= 5350/8870 | tokens=2.805B | loss=2.5375 | ppl=12.648 | tok/s=87,374 | lr=1.253e-04 | grad=0.350 | time=6.44h
+step= 5360/8870 | tokens=2.810B | loss=2.5879 | ppl=13.302 | tok/s=86,650 | lr=1.249e-04 | grad=0.377 | time=6.45h
+step= 5370/8870 | tokens=2.815B | loss=2.5833 | ppl=13.240 | tok/s=88,393 | lr=1.244e-04 | grad=0.372 | time=6.47h
+step= 5380/8870 | tokens=2.821B | loss=2.5692 | ppl=13.056 | tok/s=88,405 | lr=1.239e-04 | grad=0.335 | time=6.49h
+step= 5390/8870 | tokens=2.826B | loss=2.6131 | ppl=13.641 | tok/s=88,769 | lr=1.235e-04 | grad=0.343 | time=6.50h
+step= 5400/8870 | tokens=2.831B | loss=2.6102 | ppl=13.601 | tok/s=88,311 | lr=1.230e-04 | grad=0.353 | time=6.52h
+step= 5410/8870 | tokens=2.836B | loss=2.6627 | ppl=14.334 | tok/s=88,898 | lr=1.225e-04 | grad=0.366 | time=6.53h
+step= 5420/8870 | tokens=2.842B | loss=2.6248 | ppl=13.802 | tok/s=88,851 | lr=1.221e-04 | grad=0.363 | time=6.55h
+step= 5430/8870 | tokens=2.847B | loss=2.6387 | ppl=13.995 | tok/s=88,834 | lr=1.216e-04 | grad=0.364 | time=6.57h
+step= 5440/8870 | tokens=2.852B | loss=2.6017 | ppl=13.487 | tok/s=88,853 | lr=1.211e-04 | grad=0.339 | time=6.58h
+step= 5450/8870 | tokens=2.857B | loss=2.6161 | ppl=13.682 | tok/s=88,839 | lr=1.207e-04 | grad=0.339 | time=6.60h
+step= 5460/8870 | tokens=2.863B | loss=2.6244 | ppl=13.796 | tok/s=88,846 | lr=1.202e-04 | grad=0.342 | time=6.62h
+step= 5470/8870 | tokens=2.868B | loss=2.5530 | ppl=12.845 | tok/s=88,686 | lr=1.198e-04 | grad=0.393 | time=6.63h
+step= 5480/8870 | tokens=2.873B | loss=2.5948 | ppl=13.394 | tok/s=88,200 | lr=1.193e-04 | grad=0.350 | time=6.65h
+step= 5490/8870 | tokens=2.878B | loss=2.6239 | ppl=13.790 | tok/s=88,149 | lr=1.188e-04 | grad=0.370 | time=6.67h
+step= 5500/8870 | tokens=2.884B | loss=2.5390 | ppl=12.667 | tok/s=88,368 | lr=1.184e-04 | grad=0.315 | time=6.68h
+[validation] step=5500 loss=2.6322 ppl=13.905
+[validation] new best model + tokenizer saved
+[checkpoint] step 5,500
+step= 5510/8870 | tokens=2.889B | loss=2.5748 | ppl=13.129 | tok/s=61,848 | lr=1.179e-04 | grad=0.322 | time=6.71h
+step= 5520/8870 | tokens=2.894B | loss=2.5934 | ppl=13.376 | tok/s=88,428 | lr=1.175e-04 | grad=0.321 | time=6.72h
+step= 5530/8870 | tokens=2.899B | loss=2.5861 | ppl=13.278 | tok/s=88,701 | lr=1.170e-04 | grad=0.340 | time=6.74h
+step= 5540/8870 | tokens=2.905B | loss=2.6351 | ppl=13.945 | tok/s=88,694 | lr=1.166e-04 | grad=0.376 | time=6.76h
+step= 5550/8870 | tokens=2.910B | loss=2.6042 | ppl=13.520 | tok/s=88,372 | lr=1.161e-04 | grad=0.457 | time=6.77h
+step= 5560/8870 | tokens=2.915B | loss=2.5262 | ppl=12.506 | tok/s=88,850 | lr=1.157e-04 | grad=0.343 | time=6.79h
+step= 5570/8870 | tokens=2.920B | loss=2.5965 | ppl=13.417 | tok/s=88,761 | lr=1.152e-04 | grad=0.331 | time=6.80h
+step= 5580/8870 | tokens=2.926B | loss=2.6499 | ppl=14.153 | tok/s=88,293 | lr=1.147e-04 | grad=0.352 | time=6.82h
+step= 5590/8870 | tokens=2.931B | loss=2.6313 | ppl=13.892 | tok/s=88,204 | lr=1.143e-04 | grad=0.367 | time=6.84h
+step= 5600/8870 | tokens=2.936B | loss=2.6023 | ppl=13.495 | tok/s=88,513 | lr=1.138e-04 | grad=0.374 | time=6.85h
+step= 5610/8870 | tokens=2.941B | loss=2.5597 | ppl=12.932 | tok/s=88,582 | lr=1.134e-04 | grad=0.333 | time=6.87h
+step= 5620/8870 | tokens=2.946B | loss=2.6180 | ppl=13.709 | tok/s=88,637 | lr=1.129e-04 | grad=0.344 | time=6.89h
+step= 5630/8870 | tokens=2.952B | loss=2.5529 | ppl=12.844 | tok/s=88,623 | lr=1.125e-04 | grad=0.321 | time=6.90h
+step= 5640/8870 | tokens=2.957B | loss=2.5891 | ppl=13.318 | tok/s=88,591 | lr=1.120e-04 | grad=0.362 | time=6.92h
+step= 5650/8870 | tokens=2.962B | loss=2.5811 | ppl=13.211 | tok/s=88,578 | lr=1.116e-04 | grad=0.327 | time=6.94h
+step= 5660/8870 | tokens=2.967B | loss=2.5480 | ppl=12.782 | tok/s=88,551 | lr=1.111e-04 | grad=0.331 | time=6.95h
+step= 5670/8870 | tokens=2.973B | loss=2.5917 | ppl=13.353 | tok/s=88,533 | lr=1.107e-04 | grad=0.333 | time=6.97h
+step= 5680/8870 | tokens=2.978B | loss=2.6107 | ppl=13.609 | tok/s=88,528 | lr=1.102e-04 | grad=0.351 | time=6.99h
+step= 5690/8870 | tokens=2.983B | loss=2.5786 | ppl=13.178 | tok/s=88,501 | lr=1.098e-04 | grad=0.308 | time=7.00h
+step= 5700/8870 | tokens=2.988B | loss=2.5228 | ppl=12.464 | tok/s=88,527 | lr=1.094e-04 | grad=0.335 | time=7.02h
+step= 5710/8870 | tokens=2.994B | loss=2.6113 | ppl=13.616 | tok/s=88,227 | lr=1.089e-04 | grad=0.363 | time=7.04h
+step= 5720/8870 | tokens=2.999B | loss=2.6190 | ppl=13.722 | tok/s=88,439 | lr=1.085e-04 | grad=0.311 | time=7.05h
+step= 5730/8870 | tokens=3.004B | loss=2.5995 | ppl=13.457 | tok/s=88,824 | lr=1.080e-04 | grad=0.376 | time=7.07h
+step= 5740/8870 | tokens=3.009B | loss=2.5379 | ppl=12.653 | tok/s=88,744 | lr=1.076e-04 | grad=0.348 | time=7.08h
+step= 5750/8870 | tokens=3.015B | loss=2.6301 | ppl=13.876 | tok/s=88,532 | lr=1.071e-04 | grad=0.306 | time=7.10h
+step= 5760/8870 | tokens=3.020B | loss=2.6085 | ppl=13.579 | tok/s=88,806 | lr=1.067e-04 | grad=0.346 | time=7.12h
+step= 5770/8870 | tokens=3.025B | loss=2.6418 | ppl=14.038 | tok/s=88,534 | lr=1.063e-04 | grad=0.323 | time=7.13h
+step= 5780/8870 | tokens=3.030B | loss=2.6174 | ppl=13.701 | tok/s=88,360 | lr=1.058e-04 | grad=0.332 | time=7.15h
+step= 5790/8870 | tokens=3.036B | loss=2.6765 | ppl=14.534 | tok/s=88,630 | lr=1.054e-04 | grad=0.327 | time=7.17h
+step= 5800/8870 | tokens=3.041B | loss=2.6044 | ppl=13.523 | tok/s=88,665 | lr=1.050e-04 | grad=0.346 | time=7.18h
+step= 5810/8870 | tokens=3.046B | loss=2.5929 | ppl=13.368 | tok/s=87,466 | lr=1.045e-04 | grad=0.337 | time=7.20h
+step= 5820/8870 | tokens=3.051B | loss=2.6506 | ppl=14.162 | tok/s=88,423 | lr=1.041e-04 | grad=0.347 | time=7.22h
+step= 5830/8870 | tokens=3.057B | loss=2.6430 | ppl=14.055 | tok/s=88,915 | lr=1.036e-04 | grad=0.335 | time=7.23h
+step= 5840/8870 | tokens=3.062B | loss=2.6135 | ppl=13.647 | tok/s=88,294 | lr=1.032e-04 | grad=0.334 | time=7.25h
+step= 5850/8870 | tokens=3.067B | loss=2.5351 | ppl=12.617 | tok/s=88,630 | lr=1.028e-04 | grad=0.326 | time=7.27h
+step= 5860/8870 | tokens=3.072B | loss=2.6260 | ppl=13.818 | tok/s=88,233 | lr=1.023e-04 | grad=0.346 | time=7.28h
+step= 5870/8870 | tokens=3.078B | loss=2.6254 | ppl=13.810 | tok/s=88,514 | lr=1.019e-04 | grad=0.375 | time=7.30h
+step= 5880/8870 | tokens=3.083B | loss=2.6249 | ppl=13.803 | tok/s=88,827 | lr=1.015e-04 | grad=0.342 | time=7.32h
+step= 5890/8870 | tokens=3.088B | loss=2.6223 | ppl=13.768 | tok/s=88,867 | lr=1.011e-04 | grad=0.329 | time=7.33h
+step= 5900/8870 | tokens=3.093B | loss=2.6258 | ppl=13.816 | tok/s=88,480 | lr=1.006e-04 | grad=0.356 | time=7.35h
+step= 5910/8870 | tokens=3.099B | loss=2.6374 | ppl=13.977 | tok/s=88,247 | lr=1.002e-04 | grad=0.346 | time=7.36h
+step= 5920/8870 | tokens=3.104B | loss=2.5705 | ppl=13.072 | tok/s=88,143 | lr=9.977e-05 | grad=0.333 | time=7.38h
+step= 5930/8870 | tokens=3.109B | loss=2.5382 | ppl=12.656 | tok/s=88,150 | lr=9.934e-05 | grad=0.335 | time=7.40h
+step= 5940/8870 | tokens=3.114B | loss=2.6065 | ppl=13.552 | tok/s=88,541 | lr=9.891e-05 | grad=0.333 | time=7.41h
+step= 5950/8870 | tokens=3.120B | loss=2.6939 | ppl=14.790 | tok/s=88,699 | lr=9.849e-05 | grad=0.317 | time=7.43h
+step= 5960/8870 | tokens=3.125B | loss=2.6253 | ppl=13.808 | tok/s=88,371 | lr=9.806e-05 | grad=0.315 | time=7.45h
+step= 5970/8870 | tokens=3.130B | loss=2.5219 | ppl=12.452 | tok/s=88,077 | lr=9.764e-05 | grad=0.336 | time=7.46h
+step= 5980/8870 | tokens=3.135B | loss=2.5420 | ppl=12.705 | tok/s=88,349 | lr=9.722e-05 | grad=0.351 | time=7.48h
+step= 5990/8870 | tokens=3.140B | loss=2.5300 | ppl=12.554 | tok/s=88,619 | lr=9.680e-05 | grad=0.342 | time=7.50h
+step= 6000/8870 | tokens=3.146B | loss=2.6173 | ppl=13.699 | tok/s=85,406 | lr=9.638e-05 | grad=0.394 | time=7.51h
+[validation] step=6000 loss=2.6116 ppl=13.621
+[validation] new best model + tokenizer saved
+[checkpoint] step 6,000
+step= 6010/8870 | tokens=3.151B | loss=2.5732 | ppl=13.108 | tok/s=62,016 | lr=9.596e-05 | grad=0.345 | time=7.54h
+step= 6020/8870 | tokens=3.156B | loss=2.6054 | ppl=13.537 | tok/s=88,691 | lr=9.554e-05 | grad=0.343 | time=7.55h
+step= 6030/8870 | tokens=3.161B | loss=2.6032 | ppl=13.507 | tok/s=88,348 | lr=9.512e-05 | grad=0.314 | time=7.57h
+step= 6040/8870 | tokens=3.167B | loss=2.5764 | ppl=13.149 | tok/s=88,682 | lr=9.470e-05 | grad=0.328 | time=7.59h
+step= 6050/8870 | tokens=3.172B | loss=2.4912 | ppl=12.075 | tok/s=88,727 | lr=9.429e-05 | grad=0.321 | time=7.60h
+step= 6060/8870 | tokens=3.177B | loss=2.6150 | ppl=13.667 | tok/s=88,696 | lr=9.387e-05 | grad=0.356 | time=7.62h
+step= 6070/8870 | tokens=3.182B | loss=2.5615 | ppl=12.955 | tok/s=88,661 | lr=9.346e-05 | grad=0.337 | time=7.64h
+step= 6080/8870 | tokens=3.188B | loss=2.6390 | ppl=13.999 | tok/s=88,625 | lr=9.304e-05 | grad=0.326 | time=7.65h
+step= 6090/8870 | tokens=3.193B | loss=2.4844 | ppl=11.994 | tok/s=88,585 | lr=9.263e-05 | grad=0.335 | time=7.67h
+step= 6100/8870 | tokens=3.198B | loss=2.6262 | ppl=13.821 | tok/s=88,552 | lr=9.222e-05 | grad=0.319 | time=7.68h
+step= 6110/8870 | tokens=3.203B | loss=2.5733 | ppl=13.109 | tok/s=88,538 | lr=9.181e-05 | grad=0.339 | time=7.70h
+step= 6120/8870 | tokens=3.209B | loss=2.6188 | ppl=13.719 | tok/s=88,513 | lr=9.140e-05 | grad=0.347 | time=7.72h
+step= 6130/8870 | tokens=3.214B | loss=2.5918 | ppl=13.354 | tok/s=88,411 | lr=9.099e-05 | grad=0.328 | time=7.73h
+step= 6140/8870 | tokens=3.219B | loss=2.6284 | ppl=13.851 | tok/s=88,465 | lr=9.058e-05 | grad=0.319 | time=7.75h
+step= 6150/8870 | tokens=3.224B | loss=2.5941 | ppl=13.385 | tok/s=88,432 | lr=9.018e-05 | grad=0.335 | time=7.77h
+step= 6160/8870 | tokens=3.230B | loss=2.5845 | ppl=13.256 | tok/s=87,901 | lr=8.977e-05 | grad=0.390 | time=7.78h
+step= 6170/8870 | tokens=3.235B | loss=2.6068 | ppl=13.556 | tok/s=88,422 | lr=8.937e-05 | grad=0.323 | time=7.80h
+step= 6180/8870 | tokens=3.240B | loss=2.5919 | ppl=13.356 | tok/s=88,363 | lr=8.896e-05 | grad=0.332 | time=7.82h
+step= 6190/8870 | tokens=3.245B | loss=2.5962 | ppl=13.412 | tok/s=88,212 | lr=8.856e-05 | grad=0.336 | time=7.83h
+step= 6200/8870 | tokens=3.251B | loss=2.5840 | ppl=13.250 | tok/s=88,316 | lr=8.816e-05 | grad=0.364 | time=7.85h
+step= 6210/8870 | tokens=3.256B | loss=2.5830 | ppl=13.237 | tok/s=88,581 | lr=8.776e-05 | grad=0.325 | time=7.87h
+step= 6220/8870 | tokens=3.261B | loss=2.6204 | ppl=13.742 | tok/s=88,846 | lr=8.736e-05 | grad=0.329 | time=7.88h
+step= 6230/8870 | tokens=3.266B | loss=2.6248 | ppl=13.801 | tok/s=88,977 | lr=8.696e-05 | grad=0.344 | time=7.90h
+step= 6240/8870 | tokens=3.272B | loss=2.6120 | ppl=13.627 | tok/s=88,310 | lr=8.656e-05 | grad=0.322 | time=7.92h
+step= 6250/8870 | tokens=3.277B | loss=2.5338 | ppl=12.601 | tok/s=88,690 | lr=8.617e-05 | grad=0.305 | time=7.93h
+step= 6260/8870 | tokens=3.282B | loss=2.6034 | ppl=13.509 | tok/s=88,459 | lr=8.577e-05 | grad=0.321 | time=7.95h
+step= 6270/8870 | tokens=3.287B | loss=2.5387 | ppl=12.663 | tok/s=88,420 | lr=8.538e-05 | grad=0.346 | time=7.96h
+step= 6280/8870 | tokens=3.293B | loss=2.5747 | ppl=13.127 | tok/s=88,833 | lr=8.498e-05 | grad=0.341 | time=7.98h
+step= 6290/8870 | tokens=3.298B | loss=2.5627 | ppl=12.970 | tok/s=88,708 | lr=8.459e-05 | grad=0.346 | time=8.00h
+step= 6300/8870 | tokens=3.303B | loss=2.5032 | ppl=12.221 | tok/s=88,346 | lr=8.420e-05 | grad=0.339 | time=8.01h
+step= 6310/8870 | tokens=3.308B | loss=2.5785 | ppl=13.177 | tok/s=88,133 | lr=8.381e-05 | grad=0.380 | time=8.03h
+step= 6320/8870 | tokens=3.314B | loss=2.5691 | ppl=13.054 | tok/s=88,557 | lr=8.342e-05 | grad=0.353 | time=8.05h
+step= 6330/8870 | tokens=3.319B | loss=2.5509 | ppl=12.818 | tok/s=88,391 | lr=8.303e-05 | grad=0.359 | time=8.06h
+step= 6340/8870 | tokens=3.324B | loss=2.6103 | ppl=13.603 | tok/s=88,509 | lr=8.264e-05 | grad=0.323 | time=8.08h
+step= 6350/8870 | tokens=3.329B | loss=2.5316 | ppl=12.574 | tok/s=88,901 | lr=8.226e-05 | grad=0.321 | time=8.10h
+step= 6360/8870 | tokens=3.334B | loss=2.5633 | ppl=12.978 | tok/s=89,062 | lr=8.187e-05 | grad=0.328 | time=8.11h
+step= 6370/8870 | tokens=3.340B | loss=2.5793 | ppl=13.187 | tok/s=88,788 | lr=8.149e-05 | grad=0.357 | time=8.13h
+step= 6380/8870 | tokens=3.345B | loss=2.5897 | ppl=13.326 | tok/s=88,473 | lr=8.111e-05 | grad=0.307 | time=8.15h
+step= 6390/8870 | tokens=3.350B | loss=2.5600 | ppl=12.936 | tok/s=88,350 | lr=8.073e-05 | grad=0.346 | time=8.16h
+step= 6400/8870 | tokens=3.355B | loss=2.6220 | ppl=13.763 | tok/s=88,318 | lr=8.034e-05 | grad=0.320 | time=8.18h
+step= 6410/8870 | tokens=3.361B | loss=2.5786 | ppl=13.179 | tok/s=88,265 | lr=7.997e-05 | grad=0.329 | time=8.19h
+step= 6420/8870 | tokens=3.366B | loss=2.6034 | ppl=13.509 | tok/s=88,258 | lr=7.959e-05 | grad=0.321 | time=8.21h
+step= 6430/8870 | tokens=3.371B | loss=2.5042 | ppl=12.234 | tok/s=88,265 | lr=7.921e-05 | grad=0.336 | time=8.23h
+step= 6440/8870 | tokens=3.376B | loss=2.5698 | ppl=13.063 | tok/s=88,243 | lr=7.883e-05 | grad=0.361 | time=8.24h
+step= 6450/8870 | tokens=3.382B | loss=2.5796 | ppl=13.192 | tok/s=88,562 | lr=7.846e-05 | grad=0.316 | time=8.26h
+step= 6460/8870 | tokens=3.387B | loss=2.5187 | ppl=12.412 | tok/s=88,659 | lr=7.808e-05 | grad=0.312 | time=8.28h
+step= 6470/8870 | tokens=3.392B | loss=2.6061 | ppl=13.546 | tok/s=88,729 | lr=7.771e-05 | grad=0.336 | time=8.29h
+step= 6480/8870 | tokens=3.397B | loss=2.5627 | ppl=12.971 | tok/s=88,941 | lr=7.734e-05 | grad=0.336 | time=8.31h
+step= 6490/8870 | tokens=3.403B | loss=2.5649 | ppl=13.000 | tok/s=88,758 | lr=7.697e-05 | grad=0.314 | time=8.33h
+step= 6500/8870 | tokens=3.408B | loss=2.5777 | ppl=13.167 | tok/s=88,802 | lr=7.660e-05 | grad=0.328 | time=8.34h
+[validation] step=6500 loss=2.5897 ppl=13.325
+[validation] new best model + tokenizer saved
+[checkpoint] step 6,500
+step= 6510/8870 | tokens=3.413B | loss=2.5311 | ppl=12.568 | tok/s=62,367 | lr=7.623e-05 | grad=0.316 | time=8.37h
+step= 6520/8870 | tokens=3.418B | loss=2.4979 | ppl=12.157 | tok/s=88,775 | lr=7.587e-05 | grad=0.355 | time=8.38h
+step= 6530/8870 | tokens=3.424B | loss=2.5619 | ppl=12.961 | tok/s=88,674 | lr=7.550e-05 | grad=0.328 | time=8.40h
+step= 6540/8870 | tokens=3.429B | loss=2.5717 | ppl=13.088 | tok/s=88,192 | lr=7.513e-05 | grad=0.315 | time=8.42h
+step= 6550/8870 | tokens=3.434B | loss=2.5420 | ppl=12.706 | tok/s=88,399 | lr=7.477e-05 | grad=0.330 | time=8.43h
+step= 6560/8870 | tokens=3.439B | loss=2.5205 | ppl=12.435 | tok/s=88,555 | lr=7.441e-05 | grad=0.300 | time=8.45h
+step= 6570/8870 | tokens=3.445B | loss=2.5631 | ppl=12.976 | tok/s=88,580 | lr=7.405e-05 | grad=0.324 | time=8.46h
+step= 6580/8870 | tokens=3.450B | loss=2.6231 | ppl=13.779 | tok/s=88,589 | lr=7.369e-05 | grad=0.328 | time=8.48h
+step= 6590/8870 | tokens=3.455B | loss=2.5728 | ppl=13.102 | tok/s=88,558 | lr=7.333e-05 | grad=0.318 | time=8.50h
+step= 6600/8870 | tokens=3.460B | loss=2.6171 | ppl=13.696 | tok/s=88,559 | lr=7.297e-05 | grad=0.344 | time=8.51h
+step= 6610/8870 | tokens=3.466B | loss=2.5822 | ppl=13.227 | tok/s=88,550 | lr=7.262e-05 | grad=0.355 | time=8.53h
+step= 6620/8870 | tokens=3.471B | loss=2.6112 | ppl=13.615 | tok/s=88,520 | lr=7.226e-05 | grad=0.314 | time=8.55h
+step= 6630/8870 | tokens=3.476B | loss=2.6274 | ppl=13.837 | tok/s=88,473 | lr=7.191e-05 | grad=0.327 | time=8.56h
+step= 6640/8870 | tokens=3.481B | loss=2.5542 | ppl=12.861 | tok/s=88,452 | lr=7.155e-05 | grad=0.309 | time=8.58h
+step= 6650/8870 | tokens=3.487B | loss=2.5922 | ppl=13.360 | tok/s=88,428 | lr=7.120e-05 | grad=0.311 | time=8.60h
+step= 6660/8870 | tokens=3.492B | loss=2.5729 | ppl=13.104 | tok/s=88,386 | lr=7.085e-05 | grad=0.325 | time=8.61h
+step= 6670/8870 | tokens=3.497B | loss=2.5897 | ppl=13.326 | tok/s=88,391 | lr=7.050e-05 | grad=0.314 | time=8.63h
+step= 6680/8870 | tokens=3.502B | loss=2.5658 | ppl=13.011 | tok/s=88,218 | lr=7.015e-05 | grad=0.368 | time=8.65h
+step= 6690/8870 | tokens=3.507B | loss=2.5067 | ppl=12.264 | tok/s=88,571 | lr=6.981e-05 | grad=0.351 | time=8.66h
+step= 6700/8870 | tokens=3.513B | loss=2.5638 | ppl=12.985 | tok/s=88,899 | lr=6.946e-05 | grad=0.319 | time=8.68h
+step= 6710/8870 | tokens=3.518B | loss=2.5146 | ppl=12.362 | tok/s=88,589 | lr=6.912e-05 | grad=0.320 | time=8.70h
+step= 6720/8870 | tokens=3.523B | loss=2.5640 | ppl=12.988 | tok/s=88,266 | lr=6.878e-05 | grad=0.314 | time=8.71h
+step= 6730/8870 | tokens=3.528B | loss=2.5754 | ppl=13.136 | tok/s=88,864 | lr=6.843e-05 | grad=0.338 | time=8.73h
+step= 6740/8870 | tokens=3.534B | loss=2.5605 | ppl=12.942 | tok/s=88,279 | lr=6.809e-05 | grad=0.333 | time=8.74h
+step= 6750/8870 | tokens=3.539B | loss=2.5584 | ppl=12.915 | tok/s=88,640 | lr=6.776e-05 | grad=0.322 | time=8.76h
+step= 6760/8870 | tokens=3.544B | loss=2.5301 | ppl=12.555 | tok/s=88,519 | lr=6.742e-05 | grad=0.296 | time=8.78h
+step= 6770/8870 | tokens=3.549B | loss=2.5312 | ppl=12.569 | tok/s=88,412 | lr=6.708e-05 | grad=0.313 | time=8.79h
+step= 6780/8870 | tokens=3.555B | loss=2.6012 | ppl=13.480 | tok/s=88,570 | lr=6.675e-05 | grad=0.304 | time=8.81h
+step= 6790/8870 | tokens=3.560B | loss=2.5803 | ppl=13.201 | tok/s=88,575 | lr=6.641e-05 | grad=0.336 | time=8.83h
+step= 6800/8870 | tokens=3.565B | loss=2.6240 | ppl=13.791 | tok/s=88,533 | lr=6.608e-05 | grad=0.339 | time=8.84h
+step= 6810/8870 | tokens=3.570B | loss=2.5588 | ppl=12.920 | tok/s=88,614 | lr=6.575e-05 | grad=0.343 | time=8.86h
+step= 6820/8870 | tokens=3.576B | loss=2.5661 | ppl=13.015 | tok/s=88,304 | lr=6.542e-05 | grad=0.345 | time=8.88h
+step= 6830/8870 | tokens=3.581B | loss=2.5730 | ppl=13.105 | tok/s=88,713 | lr=6.509e-05 | grad=0.344 | time=8.89h
+step= 6840/8870 | tokens=3.586B | loss=2.5804 | ppl=13.203 | tok/s=88,843 | lr=6.476e-05 | grad=0.345 | time=8.91h
+step= 6850/8870 | tokens=3.591B | loss=2.5000 | ppl=12.183 | tok/s=88,635 | lr=6.444e-05 | grad=0.304 | time=8.93h
+step= 6860/8870 | tokens=3.597B | loss=2.5263 | ppl=12.507 | tok/s=88,553 | lr=6.411e-05 | grad=0.319 | time=8.94h
+step= 6870/8870 | tokens=3.602B | loss=2.4921 | ppl=12.087 | tok/s=88,534 | lr=6.379e-05 | grad=0.305 | time=8.96h
+step= 6880/8870 | tokens=3.607B | loss=2.5960 | ppl=13.410 | tok/s=88,550 | lr=6.346e-05 | grad=0.318 | time=8.97h
+step= 6890/8870 | tokens=3.612B | loss=2.5539 | ppl=12.857 | tok/s=88,561 | lr=6.314e-05 | grad=0.332 | time=8.99h
+step= 6900/8870 | tokens=3.618B | loss=2.6013 | ppl=13.481 | tok/s=88,566 | lr=6.282e-05 | grad=0.353 | time=9.01h
+step= 6910/8870 | tokens=3.623B | loss=2.5646 | ppl=12.995 | tok/s=88,564 | lr=6.251e-05 | grad=0.311 | time=9.02h
+step= 6920/8870 | tokens=3.628B | loss=2.5555 | ppl=12.878 | tok/s=88,437 | lr=6.219e-05 | grad=0.327 | time=9.04h
+step= 6930/8870 | tokens=3.633B | loss=2.5617 | ppl=12.958 | tok/s=88,244 | lr=6.187e-05 | grad=0.338 | time=9.06h
+step= 6940/8870 | tokens=3.639B | loss=2.4942 | ppl=12.112 | tok/s=88,892 | lr=6.156e-05 | grad=0.308 | time=9.07h
+step= 6950/8870 | tokens=3.644B | loss=2.5415 | ppl=12.698 | tok/s=88,413 | lr=6.125e-05 | grad=0.296 | time=9.09h
+step= 6960/8870 | tokens=3.649B | loss=2.5721 | ppl=13.093 | tok/s=88,305 | lr=6.094e-05 | grad=0.352 | time=9.11h
+step= 6970/8870 | tokens=3.654B | loss=2.5419 | ppl=12.703 | tok/s=88,460 | lr=6.063e-05 | grad=0.300 | time=9.12h
+step= 6980/8870 | tokens=3.660B | loss=2.5555 | ppl=12.877 | tok/s=87,744 | lr=6.032e-05 | grad=0.320 | time=9.14h
+step= 6990/8870 | tokens=3.665B | loss=2.5027 | ppl=12.215 | tok/s=88,860 | lr=6.001e-05 | grad=0.333 | time=9.16h
+step= 7000/8870 | tokens=3.670B | loss=2.5632 | ppl=12.977 | tok/s=88,763 | lr=5.970e-05 | grad=0.319 | time=9.17h
+[validation] step=7000 loss=2.5785 ppl=13.177
+[validation] new best model + tokenizer saved
+[checkpoint] step 7,000
+step= 7010/8870 | tokens=3.675B | loss=2.5574 | ppl=12.902 | tok/s=62,203 | lr=5.940e-05 | grad=0.315 | time=9.20h
+step= 7020/8870 | tokens=3.681B | loss=2.4841 | ppl=11.990 | tok/s=88,479 | lr=5.910e-05 | grad=0.381 | time=9.21h
+step= 7030/8870 | tokens=3.686B | loss=2.5513 | ppl=12.823 | tok/s=88,750 | lr=5.879e-05 | grad=0.319 | time=9.23h
+step= 7040/8870 | tokens=3.691B | loss=2.5058 | ppl=12.254 | tok/s=88,470 | lr=5.849e-05 | grad=0.334 | time=9.25h
+step= 7050/8870 | tokens=3.696B | loss=2.5872 | ppl=13.292 | tok/s=88,920 | lr=5.819e-05 | grad=0.321 | time=9.26h
+step= 7060/8870 | tokens=3.701B | loss=2.5195 | ppl=12.422 | tok/s=88,777 | lr=5.790e-05 | grad=0.322 | time=9.28h
+step= 7070/8870 | tokens=3.707B | loss=2.6084 | ppl=13.577 | tok/s=88,466 | lr=5.760e-05 | grad=0.317 | time=9.29h
+step= 7080/8870 | tokens=3.712B | loss=2.5766 | ppl=13.153 | tok/s=88,308 | lr=5.730e-05 | grad=0.292 | time=9.31h
+step= 7090/8870 | tokens=3.717B | loss=2.6085 | ppl=13.578 | tok/s=88,232 | lr=5.701e-05 | grad=0.323 | time=9.33h
+step= 7100/8870 | tokens=3.722B | loss=2.5930 | ppl=13.369 | tok/s=88,181 | lr=5.672e-05 | grad=0.309 | time=9.34h
+step= 7110/8870 | tokens=3.728B | loss=2.5969 | ppl=13.422 | tok/s=88,186 | lr=5.643e-05 | grad=0.309 | time=9.36h
+step= 7120/8870 | tokens=3.733B | loss=2.6172 | ppl=13.697 | tok/s=88,531 | lr=5.614e-05 | grad=0.326 | time=9.38h
+step= 7130/8870 | tokens=3.738B | loss=2.6055 | ppl=13.539 | tok/s=88,692 | lr=5.585e-05 | grad=0.324 | time=9.39h
+step= 7140/8870 | tokens=3.743B | loss=2.5483 | ppl=12.786 | tok/s=88,734 | lr=5.557e-05 | grad=0.324 | time=9.41h
+step= 7150/8870 | tokens=3.749B | loss=2.5283 | ppl=12.533 | tok/s=88,754 | lr=5.528e-05 | grad=0.315 | time=9.43h
+step= 7160/8870 | tokens=3.754B | loss=2.5063 | ppl=12.260 | tok/s=87,938 | lr=5.500e-05 | grad=0.298 | time=9.44h
+step= 7170/8870 | tokens=3.759B | loss=2.5532 | ppl=12.848 | tok/s=88,232 | lr=5.471e-05 | grad=0.343 | time=9.46h
+step= 7180/8870 | tokens=3.764B | loss=2.5470 | ppl=12.768 | tok/s=88,871 | lr=5.443e-05 | grad=0.328 | time=9.48h
+step= 7190/8870 | tokens=3.770B | loss=2.5710 | ppl=13.079 | tok/s=89,005 | lr=5.415e-05 | grad=0.302 | time=9.49h
+step= 7200/8870 | tokens=3.775B | loss=2.5374 | ppl=12.647 | tok/s=88,858 | lr=5.388e-05 | grad=0.300 | time=9.51h
+step= 7210/8870 | tokens=3.780B | loss=2.6007 | ppl=13.473 | tok/s=88,892 | lr=5.360e-05 | grad=0.324 | time=9.52h
+step= 7220/8870 | tokens=3.785B | loss=2.5700 | ppl=13.066 | tok/s=88,806 | lr=5.333e-05 | grad=0.330 | time=9.54h
+step= 7230/8870 | tokens=3.791B | loss=2.5500 | ppl=12.807 | tok/s=88,552 | lr=5.305e-05 | grad=0.354 | time=9.56h
+step= 7240/8870 | tokens=3.796B | loss=2.5803 | ppl=13.201 | tok/s=88,579 | lr=5.278e-05 | grad=0.344 | time=9.57h
+step= 7250/8870 | tokens=3.801B | loss=2.5515 | ppl=12.827 | tok/s=88,611 | lr=5.251e-05 | grad=0.323 | time=9.59h
+step= 7260/8870 | tokens=3.806B | loss=2.5460 | ppl=12.755 | tok/s=88,293 | lr=5.224e-05 | grad=0.350 | time=9.61h
+step= 7270/8870 | tokens=3.812B | loss=2.5733 | ppl=13.109 | tok/s=88,266 | lr=5.197e-05 | grad=0.338 | time=9.62h
+step= 7280/8870 | tokens=3.817B | loss=2.5619 | ppl=12.960 | tok/s=88,555 | lr=5.171e-05 | grad=0.341 | time=9.64h
+step= 7290/8870 | tokens=3.822B | loss=2.5168 | ppl=12.389 | tok/s=88,661 | lr=5.144e-05 | grad=0.321 | time=9.66h
+step= 7300/8870 | tokens=3.827B | loss=2.5611 | ppl=12.950 | tok/s=88,672 | lr=5.118e-05 | grad=0.313 | time=9.67h
+step= 7310/8870 | tokens=3.833B | loss=2.6318 | ppl=13.899 | tok/s=88,660 | lr=5.092e-05 | grad=0.324 | time=9.69h
+step= 7320/8870 | tokens=3.838B | loss=2.6111 | ppl=13.613 | tok/s=88,655 | lr=5.066e-05 | grad=0.329 | time=9.71h
+step= 7330/8870 | tokens=3.843B | loss=2.6236 | ppl=13.785 | tok/s=88,660 | lr=5.040e-05 | grad=0.302 | time=9.72h
+step= 7340/8870 | tokens=3.848B | loss=2.6189 | ppl=13.720 | tok/s=88,639 | lr=5.014e-05 | grad=0.315 | time=9.74h
+step= 7350/8870 | tokens=3.854B | loss=2.4974 | ppl=12.151 | tok/s=88,645 | lr=4.989e-05 | grad=0.353 | time=9.75h
+step= 7360/8870 | tokens=3.859B | loss=2.4965 | ppl=12.140 | tok/s=88,628 | lr=4.963e-05 | grad=0.322 | time=9.77h
+step= 7370/8870 | tokens=3.864B | loss=2.3951 | ppl=10.969 | tok/s=88,447 | lr=4.938e-05 | grad=0.295 | time=9.79h
+step= 7380/8870 | tokens=3.869B | loss=2.5375 | ppl=12.649 | tok/s=88,626 | lr=4.913e-05 | grad=0.305 | time=9.80h
+step= 7390/8870 | tokens=3.874B | loss=2.4842 | ppl=11.991 | tok/s=88,621 | lr=4.888e-05 | grad=0.310 | time=9.82h
+step= 7400/8870 | tokens=3.880B | loss=2.5472 | ppl=12.771 | tok/s=88,581 | lr=4.863e-05 | grad=0.327 | time=9.84h
+step= 7410/8870 | tokens=3.885B | loss=2.5816 | ppl=13.218 | tok/s=88,250 | lr=4.838e-05 | grad=0.322 | time=9.85h
+step= 7420/8870 | tokens=3.890B | loss=2.5482 | ppl=12.784 | tok/s=88,728 | lr=4.814e-05 | grad=0.341 | time=9.87h
+step= 7430/8870 | tokens=3.895B | loss=2.6003 | ppl=13.468 | tok/s=88,510 | lr=4.790e-05 | grad=0.300 | time=9.89h
+step= 7440/8870 | tokens=3.901B | loss=2.5401 | ppl=12.681 | tok/s=88,240 | lr=4.765e-05 | grad=0.317 | time=9.90h
+step= 7450/8870 | tokens=3.906B | loss=2.5786 | ppl=13.178 | tok/s=88,346 | lr=4.741e-05 | grad=0.314 | time=9.92h
+step= 7460/8870 | tokens=3.911B | loss=2.5777 | ppl=13.167 | tok/s=88,526 | lr=4.717e-05 | grad=0.330 | time=9.94h
+step= 7470/8870 | tokens=3.916B | loss=2.5779 | ppl=13.169 | tok/s=88,897 | lr=4.694e-05 | grad=0.332 | time=9.95h
+step= 7480/8870 | tokens=3.922B | loss=2.5596 | ppl=12.931 | tok/s=89,971 | lr=4.670e-05 | grad=0.350 | time=9.97h
+step= 7490/8870 | tokens=3.927B | loss=2.5892 | ppl=13.319 | tok/s=88,770 | lr=4.647e-05 | grad=0.349 | time=9.98h
+step= 7500/8870 | tokens=3.932B | loss=2.5522 | ppl=12.835 | tok/s=88,479 | lr=4.623e-05 | grad=0.318 | time=10.00h
+[validation] step=7500 loss=2.5665 ppl=13.020
+[validation] new best model + tokenizer saved
+[checkpoint] step 7,500
+step= 7510/8870 | tokens=3.937B | loss=2.6104 | ppl=13.604 | tok/s=62,078 | lr=4.600e-05 | grad=0.342 | time=10.02h
+step= 7520/8870 | tokens=3.943B | loss=2.5938 | ppl=13.381 | tok/s=88,398 | lr=4.577e-05 | grad=0.313 | time=10.04h
+step= 7530/8870 | tokens=3.948B | loss=2.5171 | ppl=12.392 | tok/s=88,755 | lr=4.555e-05 | grad=0.306 | time=10.06h
+step= 7540/8870 | tokens=3.953B | loss=2.5502 | ppl=12.809 | tok/s=88,752 | lr=4.532e-05 | grad=0.337 | time=10.07h
+step= 7550/8870 | tokens=3.958B | loss=2.5673 | ppl=13.030 | tok/s=88,290 | lr=4.509e-05 | grad=0.322 | time=10.09h
+step= 7560/8870 | tokens=3.964B | loss=2.5677 | ppl=13.036 | tok/s=88,571 | lr=4.487e-05 | grad=0.333 | time=10.11h
+step= 7570/8870 | tokens=3.969B | loss=2.5344 | ppl=12.609 | tok/s=88,621 | lr=4.465e-05 | grad=0.318 | time=10.12h
+step= 7580/8870 | tokens=3.974B | loss=2.5146 | ppl=12.362 | tok/s=88,543 | lr=4.443e-05 | grad=0.347 | time=10.14h
+step= 7590/8870 | tokens=3.979B | loss=2.5250 | ppl=12.491 | tok/s=88,951 | lr=4.421e-05 | grad=0.328 | time=10.16h
+step= 7600/8870 | tokens=3.985B | loss=2.5636 | ppl=12.983 | tok/s=89,038 | lr=4.399e-05 | grad=0.324 | time=10.17h
+step= 7610/8870 | tokens=3.990B | loss=2.6242 | ppl=13.793 | tok/s=88,623 | lr=4.378e-05 | grad=0.319 | time=10.19h
+step= 7620/8870 | tokens=3.995B | loss=2.5794 | ppl=13.189 | tok/s=88,337 | lr=4.356e-05 | grad=0.337 | time=10.21h
+step= 7630/8870 | tokens=4.000B | loss=2.5617 | ppl=12.958 | tok/s=88,192 | lr=4.335e-05 | grad=0.314 | time=10.22h
+step= 7640/8870 | tokens=4.006B | loss=2.4595 | ppl=11.699 | tok/s=88,094 | lr=4.314e-05 | grad=0.309 | time=10.24h
+step= 7650/8870 | tokens=4.011B | loss=2.4948 | ppl=12.119 | tok/s=88,591 | lr=4.293e-05 | grad=0.325 | time=10.25h
+step= 7660/8870 | tokens=4.016B | loss=2.6399 | ppl=14.012 | tok/s=88,780 | lr=4.272e-05 | grad=0.369 | time=10.27h
+step= 7670/8870 | tokens=4.021B | loss=2.5601 | ppl=12.937 | tok/s=88,834 | lr=4.252e-05 | grad=0.311 | time=10.29h
+step= 7680/8870 | tokens=4.027B | loss=2.5296 | ppl=12.548 | tok/s=88,237 | lr=4.231e-05 | grad=0.297 | time=10.30h
+step= 7690/8870 | tokens=4.032B | loss=2.5367 | ppl=12.638 | tok/s=88,813 | lr=4.211e-05 | grad=0.332 | time=10.32h
+step= 7700/8870 | tokens=4.037B | loss=2.4850 | ppl=12.001 | tok/s=88,224 | lr=4.191e-05 | grad=0.313 | time=10.34h
+step= 7710/8870 | tokens=4.042B | loss=2.4707 | ppl=11.831 | tok/s=88,843 | lr=4.171e-05 | grad=0.315 | time=10.35h
+step= 7720/8870 | tokens=4.048B | loss=2.5182 | ppl=12.406 | tok/s=88,368 | lr=4.151e-05 | grad=0.327 | time=10.37h
+step= 7730/8870 | tokens=4.053B | loss=2.5923 | ppl=13.361 | tok/s=88,775 | lr=4.132e-05 | grad=0.332 | time=10.39h
+step= 7740/8870 | tokens=4.058B | loss=2.6217 | ppl=13.758 | tok/s=88,737 | lr=4.112e-05 | grad=0.317 | time=10.40h
+step= 7750/8870 | tokens=4.063B | loss=2.4646 | ppl=11.759 | tok/s=88,256 | lr=4.093e-05 | grad=0.337 | time=10.42h
+step= 7760/8870 | tokens=4.068B | loss=2.5644 | ppl=12.993 | tok/s=88,902 | lr=4.074e-05 | grad=0.316 | time=10.44h
+step= 7770/8870 | tokens=4.074B | loss=2.4299 | ppl=11.358 | tok/s=88,295 | lr=4.055e-05 | grad=0.293 | time=10.45h
+step= 7780/8870 | tokens=4.079B | loss=2.5622 | ppl=12.965 | tok/s=88,838 | lr=4.036e-05 | grad=0.343 | time=10.47h
+step= 7790/8870 | tokens=4.084B | loss=2.6385 | ppl=13.992 | tok/s=88,884 | lr=4.017e-05 | grad=0.330 | time=10.48h
+step= 7800/8870 | tokens=4.089B | loss=2.5808 | ppl=13.208 | tok/s=88,887 | lr=3.999e-05 | grad=0.324 | time=10.50h
+step= 7810/8870 | tokens=4.095B | loss=2.5186 | ppl=12.411 | tok/s=88,859 | lr=3.980e-05 | grad=0.344 | time=10.52h
+step= 7820/8870 | tokens=4.100B | loss=2.5508 | ppl=12.817 | tok/s=88,861 | lr=3.962e-05 | grad=0.338 | time=10.53h
+step= 7830/8870 | tokens=4.105B | loss=2.5246 | ppl=12.486 | tok/s=88,859 | lr=3.944e-05 | grad=0.314 | time=10.55h
+step= 7840/8870 | tokens=4.110B | loss=2.5694 | ppl=13.058 | tok/s=88,859 | lr=3.926e-05 | grad=0.311 | time=10.57h
+step= 7850/8870 | tokens=4.116B | loss=2.6039 | ppl=13.516 | tok/s=88,870 | lr=3.909e-05 | grad=0.356 | time=10.58h
+step= 7860/8870 | tokens=4.121B | loss=2.4803 | ppl=11.945 | tok/s=88,873 | lr=3.891e-05 | grad=0.310 | time=10.60h
+step= 7870/8870 | tokens=4.126B | loss=2.5914 | ppl=13.349 | tok/s=88,880 | lr=3.874e-05 | grad=0.312 | time=10.62h
+step= 7880/8870 | tokens=4.131B | loss=2.4326 | ppl=11.389 | tok/s=88,891 | lr=3.857e-05 | grad=0.310 | time=10.63h
+step= 7890/8870 | tokens=4.137B | loss=2.5690 | ppl=13.052 | tok/s=88,709 | lr=3.840e-05 | grad=0.326 | time=10.65h
+step= 7900/8870 | tokens=4.142B | loss=2.5221 | ppl=12.455 | tok/s=88,221 | lr=3.823e-05 | grad=0.300 | time=10.67h
+step= 7910/8870 | tokens=4.147B | loss=2.5907 | ppl=13.340 | tok/s=88,566 | lr=3.806e-05 | grad=0.313 | time=10.68h
+step= 7920/8870 | tokens=4.152B | loss=2.5461 | ppl=12.757 | tok/s=88,874 | lr=3.789e-05 | grad=0.321 | time=10.70h
+step= 7930/8870 | tokens=4.158B | loss=2.5616 | ppl=12.956 | tok/s=88,974 | lr=3.773e-05 | grad=0.342 | time=10.71h
+step= 7940/8870 | tokens=4.163B | loss=2.5655 | ppl=13.007 | tok/s=88,723 | lr=3.757e-05 | grad=0.321 | time=10.73h
+step= 7950/8870 | tokens=4.168B | loss=2.5630 | ppl=12.975 | tok/s=88,880 | lr=3.741e-05 | grad=0.353 | time=10.75h
+step= 7960/8870 | tokens=4.173B | loss=2.5326 | ppl=12.586 | tok/s=88,376 | lr=3.725e-05 | grad=0.293 | time=10.76h
+step= 7970/8870 | tokens=4.179B | loss=2.5441 | ppl=12.731 | tok/s=88,594 | lr=3.709e-05 | grad=0.323 | time=10.78h
+step= 7980/8870 | tokens=4.184B | loss=2.5851 | ppl=13.264 | tok/s=88,634 | lr=3.694e-05 | grad=0.330 | time=10.80h
+step= 7990/8870 | tokens=4.189B | loss=2.5701 | ppl=13.068 | tok/s=88,483 | lr=3.678e-05 | grad=0.310 | time=10.81h
+step= 8000/8870 | tokens=4.194B | loss=2.5749 | ppl=13.130 | tok/s=88,363 | lr=3.663e-05 | grad=0.335 | time=10.83h
+[validation] step=8000 loss=2.5549 ppl=12.870
+[validation] new best model + tokenizer saved
+[checkpoint] step 8,000
+step= 8010/8870 | tokens=4.200B | loss=2.5254 | ppl=12.496 | tok/s=62,231 | lr=3.648e-05 | grad=0.356 | time=10.85h
+step= 8020/8870 | tokens=4.205B | loss=2.5597 | ppl=12.933 | tok/s=86,693 | lr=3.633e-05 | grad=0.316 | time=10.87h
+step= 8030/8870 | tokens=4.210B | loss=2.5549 | ppl=12.870 | tok/s=88,365 | lr=3.619e-05 | grad=0.310 | time=10.89h
+step= 8040/8870 | tokens=4.215B | loss=2.4905 | ppl=12.067 | tok/s=88,496 | lr=3.604e-05 | grad=0.322 | time=10.90h
+step= 8050/8870 | tokens=4.221B | loss=2.5154 | ppl=12.371 | tok/s=88,811 | lr=3.590e-05 | grad=0.308 | time=10.92h
+step= 8060/8870 | tokens=4.226B | loss=2.5299 | ppl=12.553 | tok/s=88,314 | lr=3.576e-05 | grad=0.336 | time=10.94h
+step= 8070/8870 | tokens=4.231B | loss=2.5967 | ppl=13.420 | tok/s=88,703 | lr=3.562e-05 | grad=0.327 | time=10.95h
+step= 8080/8870 | tokens=4.236B | loss=2.5060 | ppl=12.256 | tok/s=88,984 | lr=3.548e-05 | grad=0.343 | time=10.97h
+step= 8090/8870 | tokens=4.241B | loss=2.5313 | ppl=12.570 | tok/s=88,498 | lr=3.534e-05 | grad=0.361 | time=10.98h
+step= 8100/8870 | tokens=4.247B | loss=2.5547 | ppl=12.867 | tok/s=88,238 | lr=3.521e-05 | grad=0.335 | time=11.00h
+step= 8110/8870 | tokens=4.252B | loss=2.5781 | ppl=13.172 | tok/s=88,114 | lr=3.507e-05 | grad=0.329 | time=11.02h
+step= 8120/8870 | tokens=4.257B | loss=2.5192 | ppl=12.419 | tok/s=88,274 | lr=3.494e-05 | grad=0.344 | time=11.03h
+step= 8130/8870 | tokens=4.262B | loss=2.5491 | ppl=12.795 | tok/s=88,318 | lr=3.481e-05 | grad=0.307 | time=11.05h
+step= 8140/8870 | tokens=4.268B | loss=2.5921 | ppl=13.358 | tok/s=88,270 | lr=3.468e-05 | grad=0.363 | time=11.07h
+step= 8150/8870 | tokens=4.273B | loss=2.5168 | ppl=12.389 | tok/s=88,602 | lr=3.456e-05 | grad=0.356 | time=11.08h
+step= 8160/8870 | tokens=4.278B | loss=2.5253 | ppl=12.495 | tok/s=88,811 | lr=3.443e-05 | grad=0.337 | time=11.10h
+step= 8170/8870 | tokens=4.283B | loss=2.5580 | ppl=12.910 | tok/s=88,956 | lr=3.431e-05 | grad=0.328 | time=11.12h
+step= 8180/8870 | tokens=4.289B | loss=2.5450 | ppl=12.743 | tok/s=88,443 | lr=3.419e-05 | grad=0.325 | time=11.13h
+step= 8190/8870 | tokens=4.294B | loss=2.5306 | ppl=12.561 | tok/s=88,460 | lr=3.407e-05 | grad=0.314 | time=11.15h
+step= 8200/8870 | tokens=4.299B | loss=2.5075 | ppl=12.274 | tok/s=88,749 | lr=3.395e-05 | grad=0.309 | time=11.17h
+step= 8210/8870 | tokens=4.304B | loss=2.5388 | ppl=12.664 | tok/s=88,420 | lr=3.383e-05 | grad=0.333 | time=11.18h
+step= 8220/8870 | tokens=4.310B | loss=2.5826 | ppl=13.231 | tok/s=88,943 | lr=3.372e-05 | grad=0.348 | time=11.20h
+step= 8230/8870 | tokens=4.315B | loss=2.5897 | ppl=13.326 | tok/s=88,895 | lr=3.361e-05 | grad=0.312 | time=11.22h
+step= 8240/8870 | tokens=4.320B | loss=2.5512 | ppl=12.822 | tok/s=88,840 | lr=3.349e-05 | grad=0.349 | time=11.23h
+step= 8250/8870 | tokens=4.325B | loss=2.5139 | ppl=12.353 | tok/s=88,806 | lr=3.339e-05 | grad=0.343 | time=11.25h
+step= 8260/8870 | tokens=4.331B | loss=2.4636 | ppl=11.747 | tok/s=88,769 | lr=3.328e-05 | grad=0.296 | time=11.26h
+step= 8270/8870 | tokens=4.336B | loss=2.6059 | ppl=13.543 | tok/s=88,728 | lr=3.317e-05 | grad=0.351 | time=11.28h
+step= 8280/8870 | tokens=4.341B | loss=2.5191 | ppl=12.417 | tok/s=88,685 | lr=3.307e-05 | grad=0.332 | time=11.30h
+step= 8290/8870 | tokens=4.346B | loss=2.5529 | ppl=12.845 | tok/s=88,661 | lr=3.296e-05 | grad=0.332 | time=11.31h
+step= 8300/8870 | tokens=4.352B | loss=2.5654 | ppl=13.006 | tok/s=88,656 | lr=3.286e-05 | grad=0.317 | time=11.33h
+step= 8310/8870 | tokens=4.357B | loss=2.5888 | ppl=13.314 | tok/s=88,622 | lr=3.277e-05 | grad=0.370 | time=11.35h
+step= 8320/8870 | tokens=4.362B | loss=2.6015 | ppl=13.483 | tok/s=88,640 | lr=3.267e-05 | grad=0.339 | time=11.36h
+step= 8330/8870 | tokens=4.367B | loss=2.5982 | ppl=13.439 | tok/s=88,653 | lr=3.257e-05 | grad=0.347 | time=11.38h
+step= 8340/8870 | tokens=4.373B | loss=2.5248 | ppl=12.488 | tok/s=88,645 | lr=3.248e-05 | grad=0.317 | time=11.40h
+step= 8350/8870 | tokens=4.378B | loss=2.5215 | ppl=12.447 | tok/s=88,619 | lr=3.239e-05 | grad=0.378 | time=11.41h
+step= 8360/8870 | tokens=4.383B | loss=2.5660 | ppl=13.013 | tok/s=88,632 | lr=3.230e-05 | grad=0.367 | time=11.43h
+step= 8370/8870 | tokens=4.388B | loss=2.5415 | ppl=12.698 | tok/s=88,611 | lr=3.221e-05 | grad=0.314 | time=11.45h
+step= 8380/8870 | tokens=4.394B | loss=2.5443 | ppl=12.734 | tok/s=88,239 | lr=3.212e-05 | grad=0.297 | time=11.46h
+step= 8390/8870 | tokens=4.399B | loss=2.5117 | ppl=12.326 | tok/s=88,620 | lr=3.203e-05 | grad=0.378 | time=11.48h
+step= 8400/8870 | tokens=4.404B | loss=2.4580 | ppl=11.681 | tok/s=88,908 | lr=3.195e-05 | grad=0.336 | time=11.49h
+step= 8410/8870 | tokens=4.409B | loss=2.5106 | ppl=12.313 | tok/s=88,970 | lr=3.187e-05 | grad=0.338 | time=11.51h
+step= 8420/8870 | tokens=4.415B | loss=2.5353 | ppl=12.620 | tok/s=88,294 | lr=3.179e-05 | grad=0.305 | time=11.53h
+step= 8430/8870 | tokens=4.420B | loss=2.5663 | ppl=13.018 | tok/s=88,613 | lr=3.171e-05 | grad=0.347 | time=11.54h
+step= 8440/8870 | tokens=4.425B | loss=2.5251 | ppl=12.493 | tok/s=88,322 | lr=3.163e-05 | grad=0.329 | time=11.56h
+step= 8450/8870 | tokens=4.430B | loss=2.5088 | ppl=12.290 | tok/s=88,566 | lr=3.156e-05 | grad=0.370 | time=11.58h
+step= 8460/8870 | tokens=4.435B | loss=2.5609 | ppl=12.948 | tok/s=88,699 | lr=3.149e-05 | grad=0.332 | time=11.59h
+step= 8470/8870 | tokens=4.441B | loss=2.4874 | ppl=12.030 | tok/s=88,528 | lr=3.142e-05 | grad=0.324 | time=11.61h
+step= 8480/8870 | tokens=4.446B | loss=2.5343 | ppl=12.608 | tok/s=88,408 | lr=3.135e-05 | grad=0.321 | time=11.63h
+step= 8490/8870 | tokens=4.451B | loss=2.5125 | ppl=12.336 | tok/s=88,334 | lr=3.128e-05 | grad=0.329 | time=11.64h
+step= 8500/8870 | tokens=4.456B | loss=2.5411 | ppl=12.694 | tok/s=88,262 | lr=3.121e-05 | grad=0.340 | time=11.66h
+[validation] step=8500 loss=2.5469 ppl=12.767
+[validation] new best model + tokenizer saved
+[checkpoint] step 8,500
+step= 8510/8870 | tokens=4.462B | loss=2.5427 | ppl=12.714 | tok/s=62,283 | lr=3.115e-05 | grad=0.353 | time=11.68h
+step= 8520/8870 | tokens=4.467B | loss=2.5518 | ppl=12.831 | tok/s=88,361 | lr=3.108e-05 | grad=0.318 | time=11.70h
+step= 8530/8870 | tokens=4.472B | loss=2.5383 | ppl=12.658 | tok/s=87,693 | lr=3.102e-05 | grad=0.377 | time=11.72h
+step= 8540/8870 | tokens=4.477B | loss=2.4752 | ppl=11.884 | tok/s=88,544 | lr=3.096e-05 | grad=0.344 | time=11.73h
+step= 8550/8870 | tokens=4.483B | loss=2.5153 | ppl=12.371 | tok/s=88,337 | lr=3.091e-05 | grad=0.337 | time=11.75h
+step= 8560/8870 | tokens=4.488B | loss=2.5297 | ppl=12.550 | tok/s=88,484 | lr=3.085e-05 | grad=0.312 | time=11.76h
+step= 8570/8870 | tokens=4.493B | loss=2.5383 | ppl=12.658 | tok/s=88,668 | lr=3.080e-05 | grad=0.346 | time=11.78h
+step= 8580/8870 | tokens=4.498B | loss=2.4397 | ppl=11.470 | tok/s=88,720 | lr=3.075e-05 | grad=0.354 | time=11.80h
+step= 8590/8870 | tokens=4.504B | loss=2.5331 | ppl=12.592 | tok/s=88,346 | lr=3.070e-05 | grad=0.345 | time=11.81h
+step= 8600/8870 | tokens=4.509B | loss=2.5246 | ppl=12.486 | tok/s=88,973 | lr=3.065e-05 | grad=0.412 | time=11.83h
+step= 8610/8870 | tokens=4.514B | loss=2.5314 | ppl=12.571 | tok/s=88,479 | lr=3.060e-05 | grad=0.334 | time=11.85h
+step= 8620/8870 | tokens=4.519B | loss=2.4994 | ppl=12.175 | tok/s=88,628 | lr=3.056e-05 | grad=0.353 | time=11.86h
+step= 8630/8870 | tokens=4.525B | loss=2.4707 | ppl=11.830 | tok/s=88,949 | lr=3.051e-05 | grad=0.322 | time=11.88h
+step= 8640/8870 | tokens=4.530B | loss=2.4848 | ppl=11.998 | tok/s=88,889 | lr=3.047e-05 | grad=0.334 | time=11.90h
+step= 8650/8870 | tokens=4.535B | loss=2.5311 | ppl=12.567 | tok/s=88,774 | lr=3.043e-05 | grad=0.319 | time=11.91h
+step= 8660/8870 | tokens=4.540B | loss=2.5174 | ppl=12.397 | tok/s=88,949 | lr=3.039e-05 | grad=0.323 | time=11.93h
+step= 8670/8870 | tokens=4.546B | loss=2.4268 | ppl=11.323 | tok/s=88,449 | lr=3.036e-05 | grad=0.337 | time=11.95h
+step= 8680/8870 | tokens=4.551B | loss=2.4766 | ppl=11.901 | tok/s=87,653 | lr=3.032e-05 | grad=0.308 | time=11.96h
+step= 8690/8870 | tokens=4.556B | loss=2.4911 | ppl=12.075 | tok/s=88,820 | lr=3.029e-05 | grad=0.320 | time=11.98h
+step= 8700/8870 | tokens=4.561B | loss=2.5021 | ppl=12.208 | tok/s=88,480 | lr=3.026e-05 | grad=0.355 | time=11.99h
+step= 8710/8870 | tokens=4.567B | loss=2.5357 | ppl=12.626 | tok/s=88,771 | lr=3.023e-05 | grad=0.342 | time=12.01h
+step= 8720/8870 | tokens=4.572B | loss=2.5031 | ppl=12.220 | tok/s=88,315 | lr=3.020e-05 | grad=0.353 | time=12.03h
+step= 8730/8870 | tokens=4.577B | loss=2.5784 | ppl=13.175 | tok/s=88,800 | lr=3.018e-05 | grad=0.347 | time=12.04h
+step= 8740/8870 | tokens=4.582B | loss=2.5587 | ppl=12.919 | tok/s=88,928 | lr=3.015e-05 | grad=0.345 | time=12.06h
+step= 8750/8870 | tokens=4.588B | loss=2.5359 | ppl=12.628 | tok/s=88,729 | lr=3.013e-05 | grad=0.331 | time=12.08h
+step= 8760/8870 | tokens=4.593B | loss=2.4840 | ppl=11.989 | tok/s=88,345 | lr=3.011e-05 | grad=0.345 | time=12.09h
+step= 8770/8870 | tokens=4.598B | loss=2.4794 | ppl=11.934 | tok/s=88,250 | lr=3.009e-05 | grad=0.338 | time=12.11h
+step= 8780/8870 | tokens=4.603B | loss=2.4994 | ppl=12.175 | tok/s=88,634 | lr=3.007e-05 | grad=0.339 | time=12.13h
+step= 8790/8870 | tokens=4.608B | loss=2.4509 | ppl=11.599 | tok/s=88,792 | lr=3.006e-05 | grad=0.337 | time=12.14h
+step= 8800/8870 | tokens=4.614B | loss=2.4545 | ppl=11.641 | tok/s=88,853 | lr=3.004e-05 | grad=0.391 | time=12.16h
+step= 8810/8870 | tokens=4.619B | loss=2.5359 | ppl=12.628 | tok/s=88,872 | lr=3.003e-05 | grad=0.347 | time=12.18h
+step= 8820/8870 | tokens=4.624B | loss=2.4920 | ppl=12.086 | tok/s=88,863 | lr=3.002e-05 | grad=0.378 | time=12.19h
+step= 8830/8870 | tokens=4.629B | loss=2.5547 | ppl=12.868 | tok/s=88,855 | lr=3.001e-05 | grad=0.373 | time=12.21h
+step= 8840/8870 | tokens=4.635B | loss=2.4537 | ppl=11.631 | tok/s=88,869 | lr=3.001e-05 | grad=0.303 | time=12.22h
+step= 8850/8870 | tokens=4.640B | loss=2.5348 | ppl=12.614 | tok/s=88,855 | lr=3.000e-05 | grad=0.335 | time=12.24h
+step= 8860/8870 | tokens=4.645B | loss=2.4672 | ppl=11.789 | tok/s=88,626 | lr=3.000e-05 | grad=0.324 | time=12.26h
+step= 8870/8870 | tokens=4.650B | loss=2.4704 | ppl=11.827 | tok/s=88,221 | lr=3.000e-05 | grad=0.326 | time=12.27h
+[checkpoint] step 8,870
+================================================================================
+250M FULL DEVELOPMENT TRAINING COMPLETE
+Final model: /workspace/dev_data/development_4B/output/dev250M_final_full_4p65B_v1/model
+Best model: /workspace/dev_data/development_4B/output/dev250M_final_full_4p65B_v1/best_model
+Checkpoints: /workspace/dev_data/development_4B/output/dev250M_final_full_4p65B_v1/checkpoints
+Steps: 8870 Tokens: 4,650,434,560
+================================================================================
