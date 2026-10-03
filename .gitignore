@@ -1,0 +1,31 @@
+# Weights and Model Checkpoints
+model.pt
+*.pt
+*.bin
+checkpoints/
+
+# Virtual Environments
+slm_env/
+.env
+.venv
+env/
+venv/
+
+# Local Evaluation Data & Intermediate Results
+results/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Editor & OS Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
