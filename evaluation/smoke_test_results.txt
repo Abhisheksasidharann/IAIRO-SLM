@@ -1,0 +1,34 @@
+First test (greedy decoding, looped):
+Acute myocardial infarction is characterized by a high incidence of myocardial infarction, which is associated with a high mortality rate . The incidence of myocardial infarction is higher in patients with diabetes, which is associated with a higher risk of myocardial infarction . The incidence of myocardial infarction is higher in patients with diabetes, which is associated with a higher risk of myocardial
+
+============================================================
+
+Sampled outputs:
+
+PROMPT: Metformin is a first-line treatment for
+OUTPUT: Metformin is a first-line treatment for advanced CRC. However, some patients with early-stage CRC, such as those with resectable disease, are likely to have a high risk of progressing to liver metastases, particularly in the liver. Therefore, the current treatment options for advanced CRC are limited. We have also found that the combination of lenv
+------------------------------------------------------------
+PROMPT: The mechanism of action of warfarin involves
+OUTPUT: The mechanism of action of warfarin involves a combination of reduced renal filtration pressure and increased systemic inflammatory response. Additionally, it is noteworthy that, although the association between the eGFR and the outcome of the study outcome is relatively limited, it is noteworthy to note the association between a composite of eGFR and the risk of cardiovascular events. In that case,
+------------------------------------------------------------
+PROMPT: Patients with chronic kidney disease should avoid
+OUTPUT: Patients with chronic kidney disease should avoid the use of corticosteroids, which may be linked to decreased renal function .
+------------------------------------------------------------
+PROMPT: In this randomized controlled trial, participants were
+OUTPUT: In this randomized controlled trial, participants were randomly assigned to either the intervention (thereby acting on the same intervention in the same study) or a placebo control group using a computerised computerised computerised computerised computerised computerised computerised computerised computerised computerised computerised computerised computerised computerised computerised computerised computer
+------------------------------------------------------------
+PROMPT: Common adverse reactions of ibuprofen include
+OUTPUT: Common adverse reactions of ibuprofen include nausea, vomiting, and diarrhea, whereas the adverse reactions are mild and include leukopenia and leukopenia, with the main reported adverse event being respiratory muscle-related events . Since there are no specific drugs for the treatment of pneumonia, there is a need to explore the safety of ibuprofen in children with pneumonia
+------------------------------------------------------------
+PROMPT: The recommended dose of acetaminophen for adults is
+OUTPUT: The recommended dose of acetaminophen for adults is 10–20 mg/kg/day for adults and 5–10 mg/kg/day for children . The dose of acetaminophen from 15 to 50 mg/kg is well tolerated, with no significant adverse events. For non-drugs, no dose-limiting toxicity is observed during treatment .
+------------------------------------------------------------
+PROMPT: Hypertension is diagnosed when blood pressure
+OUTPUT: Hypertension is diagnosed when blood pressure increases more than 90 mmHg in the absence of signs of hypotension. In this case, it was concluded that the patient is asymptomatic when the pH is greater than 7.2 .
+------------------------------------------------------------
+PROMPT: Insulin resistance is associated with
+OUTPUT: Insulin resistance is associated with decreased insulin sensitivity, which affects both central and peripheral insulin sensitivity. Insulin resistance is an early and frequent event that is likely to result in insulin resistance and an increased risk of type 2 diabetes (T2D) . Insulin resistance and elevated plasma insulin levels are typical features of insulin resistance that are closely linked
+------------------------------------------------------------
+PROMPT: Contraindications to beta blockers include
+OUTPUT: Contraindications to beta blockers include: a) a positive impact on mood (b) the incidence of depression/anxiety, and b) a negative impact on work and/or the need for sleep/wake cycles ( 5 ).
+------------------------------------------------------------
